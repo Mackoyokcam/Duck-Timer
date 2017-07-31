@@ -17,8 +17,8 @@ var theDuck = new Duck(duckMessages);
 
 //when user enters info and presses start, goal changes
 
-var userGoal = getElementById('userGoal').value;
 
+var userGoal = getElementById('userGoalInput').value;
 
 function showGoal() {
   var divEl = document.getElementById('theGoalOutPut');
