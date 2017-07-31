@@ -1,9 +1,19 @@
+#timer_container {
+  width: 960px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+button {
+  margin-top: 10px;
+}
+
 #timer {
   border: 2px solid black;
   height: 40px;
   width: 300px;
   margin: 0px auto;
-  margin-top: 400px;
+  margin-top: 100px;
   text-align: center;
   font-size: 30px;
   font-weight: bold;
