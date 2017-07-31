@@ -109,3 +109,33 @@ function handleStart() {
 document.getElementById('start_button').addEventListener('click', handleStart);
 document.getElementById('done_button').addEventListener('click', handleStop);
 document.getElementById('reset_button').addEventListener('click', handleReset);
+
+//----------->
+//--------------Cheat Sheet Globals-------------->
+var h1 = document.createElement('h1');
+var h2 = document.createElement('h2');
+var p = document.createElement('p');
+var h3 = document.createElement('h3');
+var section = document.getElementById('cheat_sheet');
+
+//------------Cheat sheet Object----------------->
+var cheatSheet = {
+  referenceError: function (){
+    clear();
+    h1.textContent = 'ReferenceError';
+    section.appendChild(h1);
+    h2.textContent = 'VARIABLE DOES NOT EXIST';
+    section.appendChild(h2);
+    p.textContent = 'This is caused by a variable that is not declared or is out of scope.';
+    section.appendChild(p);
+    h2.textcontent = 'VARIABLE IS UNDECLARED';
+    h3.textContent = ''
+    console.log('RefrenceError sheet printed...');
+  }
+};
+//------------Clear Section----------------->
+function clear(){
+  document.getElementById('cheat_sheet').innerHTML = '';
+}
+//-------------Event Listener---------------->
+submit.addEventListener('click',cheatSheet.referenceError);
