@@ -1,14 +1,9 @@
 'use strict';
 
 // Get this info from localStorage
-
-
 var userName = JSON.parse(localStorage.getItem(userName));
-var duckMessages = ['You can do it ' + userName + '!',
-  'I believe in you ' + userName + '!'];
-
-var name = 'Johnny';
 var duckMessages = inspMessages; // Located in messages.js
+
 
 var minutes = 15;
 var seconds = 0;
