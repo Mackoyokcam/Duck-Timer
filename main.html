@@ -7,38 +7,28 @@
   </head>
   <body>
 
-    <form>
-      Your psuedo-code written goal:<br>
-      <input id="userGoalInput" type="text" name="firstname" placeholder="Ex: add function that creates list...">
-    </form>
-
-    <div id="theGoalOutPut"> </div>            <!-- user goal that will pop up when button is clicked-->
-
-    <section id="timer"></section>
-    <script src="main.js"></script>
 
 
     <p id="duck_message"></p>
     <img id="rubber_duck" src="imgs/Rubber-duck.png"></img>
+
+
+
+       <section id="timer"></section>
+       <div id="timer_container">
+
+    
+      <button id="start_button">Start</button>
+      <button id="done_button">Done</button>
+      <button id="reset_button">Reset</button>
+    </div>
 
     <form>
       Your psuedo-code written goal:<br>
       <input id = "userGoalInput" type="text" name="firstname" placeholder="Ex: add function that creates list...">
     </form>
 
-    <div id = "theGoal"> </div>    <!--//user goal--> 
-
-
-    <section id="timer"></section>
-    <div id="timer_container">
-
-      <section id="timer"></section>
-      <button id="start_button">Start</button>
-      <button id="done_button">Done</button>
-      <button id="reset_button">Reset</button>
-    </div>
-
-
+    <div id="theGoalOutPut"> </div>            <!-- user goal that will pop up when button is clicked-->
 
 <!-- Cheat Sheet -->
     <button type:"submit" id="submit" name="submit">ReferenceError</button>
