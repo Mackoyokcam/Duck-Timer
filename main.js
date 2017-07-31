@@ -4,9 +4,20 @@
 var name = 'Johnny';
 var duckMessages = inspMessages; // Located in messages.js
 
+var times = {};
+
+if (localStorage.times) {
+  times = JSON.parse(localStorage.times);
+} else {
+  times = {
+    'user': name
+  };
+}
+
 var minutes = 15;
 var seconds = 0;
 var timer;
+
 document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
 document.getElementById('done_button').disabled = true;
 document.getElementById('done_button').style.opacity = 0.5;
@@ -17,6 +28,7 @@ var messageInterval = 1;
 var intervalHolder = messageInterval;
 var theDuck = new Duck(duckMessages);
 
+// Duck constructor
 function Duck(messages) {
   this.messages = messages;
   this.previous = -5; // Previous message index
@@ -32,6 +44,7 @@ function Duck(messages) {
   };
 }
 
+// Generates a random number used to index the messages for the duck
 function randomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
