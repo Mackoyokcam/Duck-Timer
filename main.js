@@ -129,7 +129,7 @@ var cheatSheet = {
     p.textContent = 'This is caused by a variable that is not declared or is out of scope.';
     section.appendChild(p);
     h2.textcontent = 'VARIABLE IS UNDECLARED';
-    h3.textContent = ''
+    h3.textContent = '';
     console.log('RefrenceError sheet printed...');
   }
 };
