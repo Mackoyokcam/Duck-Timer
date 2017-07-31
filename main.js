@@ -2,10 +2,7 @@
 
 // Get this info from localStorage
 var name = 'Johnny';
-var duckMessages = ['You can do it ' + name + '!',
-  'I believe in you ' + name + '!',
-  name + ' is taking over the world!',
-  'Nobody codes better than you ' + name];
+var duckMessages = inspMessages; // Located in messages.js
 
 var minutes = 15;
 var seconds = 0;
@@ -13,6 +10,7 @@ var timer;
 document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
 document.getElementById('done_button').disabled = true;
 document.getElementById('done_button').style.opacity = 0.5;
+document.getElementById('duck_message').textContent = 'Hello ' + name + '!';
 
 // Get this info from localStorage in the future
 var messageInterval = 1;
@@ -53,6 +51,7 @@ function handleStop() {
 function handleReset() {
   minutes = 15;
   seconds = 0;
+  messageInterval = intervalHolder;
   timer = clearInterval(timer);
   document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
   document.getElementById('done_button').disabled = true;
@@ -85,6 +84,7 @@ function handleStart() {
     if (minutes < 0) {
       clearInterval(timer);
       document.getElementById('timer').innerHTML = 'EXPIRED';
+      window.location.href = 'summary.html';
 
       // Send info to summary page
     } else {
