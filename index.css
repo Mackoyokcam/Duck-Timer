@@ -1,3 +1,4 @@
+
 *{
 /*   border: solid black 2px; */
   font-family:sans-serif;
@@ -83,4 +84,12 @@ a:visited{
 #name{
   width:430px;
   margin:0 auto;
+
+
+form {
+
+  align: center;
+  margin-left: 400px;
+  margin-top: 400px;
+
 }
