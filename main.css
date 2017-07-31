@@ -8,3 +8,14 @@
   font-size: 30px;
   font-weight: bold;
 }
+
+#rubber_duck {
+  width: 400px;
+  height: 400px;
+}
+
+#duck_message {
+  width: 200px;
+  height: 50px;
+  border: 2px solid black;
+}
