@@ -154,6 +154,15 @@ var cheatSheet = {
     var h4 = document.createElement('h2');
     h4.textContent = 'RefrenceError: Can\'t find variable: height';
     section.appendChild(h4);
+    var namedTitle = document.createElement('h2');
+    namedTitle.textContent = 'NAMED FUNCTION IS UNDEFINED';
+    section.appendChild(namedTitle);
+    var namedCode = document.createElement('h3');
+    namedCode.textContent = 'document.write(randomFunction());';
+    section.appendChild(namedCode);
+    var namedError = document.createElement('h2');
+    namedError.textContent = 'RefrenceError: Can\'t find varfiable: randomFunction';
+    section.appendChild(namedError);
     console.log('RefrenceError cheat printed...');
   }
 };
