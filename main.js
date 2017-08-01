@@ -32,7 +32,18 @@ var messageInterval = 1;
 var intervalHolder = messageInterval;
 var theDuck = new Duck(duckMessages);
 
-// Duck constructor
+
+//when user enters info and presses start, goal changes
+function showGoal() {
+  var userGoal = document.getElementById('userGoalInput').value;
+  var divEl = document.getElementById('theGoalOutPut');
+  var pEl = document.createElement('p');
+  pEl.textContent = userGoal;
+  divEl.appendChild(pEl);
+
+}
+
+// Duck Constructor
 function Duck(messages) {
   this.messages = messages;
   this.previous = -5; // Previous message index
@@ -83,7 +94,7 @@ function handleStart() {
   document.getElementById('start_button').style.opacity = 0.5;
   document.getElementById('done_button').disabled = false;
   document.getElementById('done_button').style.opacity = 1;
-
+  showGoal();
   timer = setInterval(function() {
     seconds--;
     // 1 minute has has passed
