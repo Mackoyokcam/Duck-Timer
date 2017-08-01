@@ -40,8 +40,14 @@ function showGoal() {
   var divEl = document.getElementById('theGoalOutPut');
   var pEl = document.createElement('p');
   pEl.id = 'userGoal';
-  pEl.textContent = userGoal;
+  pEl.textContent = name + ', your goal: ' + userGoal ;
   divEl.appendChild(pEl);
+
+
+
+  var elem = document.getElementById('goalForm');
+  elem.parentNode.removeChild(elem);
+
 }
 
 // Duck Constructor
@@ -193,7 +199,45 @@ var cheatSheet = {
     var h4 = document.createElement('h2');
     h4.textContent = 'RefrenceError: Can\'t find variable: height';
     section.appendChild(h4);
+    var namedTitle = document.createElement('h2');
+    namedTitle.textContent = 'NAMED FUNCTION IS UNDEFINED';
+    section.appendChild(namedTitle);
+    var namedCode = document.createElement('h3');
+    namedCode.textContent = 'document.write(randomFunction());';
+    section.appendChild(namedCode);
+    var namedError = document.createElement('h2');
+    namedError.textContent = 'RefrenceError: Can\'t find varfiable: randomFunction';
+    section.appendChild(namedError);
     console.log('RefrenceError cheat printed...');
+  },
+  //+++++++++++++++++++++ syntaxError +++++++++++++++++++>
+  syntaxError: function (){
+    clear();
+    var mainTitle = document.createElement('h1');
+    mainTitle.textContent = 'SyntaxError';
+    section.appendChild(mainTitle);
+    var mainSub = document.createElement('h2');
+    mainSub.textContent = 'SYNTAX IS NOT CORRECT';
+    section.appendChild(mainSub);
+    var description = document.createElement('p');
+    description.textContent = 'This is caused by incorrect use of the rules of the language. It is often the result of a simple typo.';
+    section.appendChild(description);
+    var mismatch = document.createElement('h2');
+    mismatch.textContent = 'MISMATCH OR UNCLOSED QUOTES';
+    var mismatchExp = document.createElement('h3');
+    mismatchExp.textContent = 'document.write(\"Howdy\')';
+    section.appendChild(mismatchExp);
+    var mismatchError = document.createElement('h2');
+    mismatchError.textContent = 'SyntaxErro: Unexpected EOF';
+    section.appendChild(mismatchError);
+    var missBracket = document.createElement('h2');
+    missBracket.textContent = 'MISSING CLOSING BRACKET';
+    section.appendChild(missBracket);
+    var missBrackCode = document.createElement('h3');
+    missBrackCode.textContent = 'documnet.getElementById(\'page\'';
+    section.appendChild(missBrackCode);
+
+    console.log('SyntaxError is printing!');
   }
 };
 //------------Clear Section----------------->
@@ -201,4 +245,4 @@ function clear(){
   document.getElementById('cheat_sheet').innerHTML = '';
 }
 //-------------Event Listener---------------->
-submit.addEventListener('click',cheatSheet.referenceError);
+submit.addEventListener('click',cheatSheet.syntaxError);
