@@ -24,6 +24,8 @@ var seconds = 0;
 var timer;
 
 document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
+document.getElementById('start_button').disabled = true;
+document.getElementById('start_button').style.opacity = 0.5;
 document.getElementById('done_button').disabled = true;
 document.getElementById('done_button').style.opacity = 0.5;
 document.getElementById('duck_message').textContent = 'Hello ' + name + '!';
@@ -167,10 +169,25 @@ function handleStart() {
   }, 1000);
 }
 
+function handleInput(e) {
+  if (isEmpty(e.target.value)) {
+    document.getElementById('start_button').disabled = true;
+    document.getElementById('start_button').style.opacity = 0.5;
+  } else {
+    document.getElementById('start_button').disabled = false;
+    document.getElementById('start_button').style.opacity = 1;
+  }
+}
+
+function isEmpty(str) {
+  return str.replace(/^\s+|\s+$/g, '').length == 0;
+}
+
 document.getElementById('start_button').addEventListener('click', handleStart);
 document.getElementById('done_button').addEventListener('click', handleStop);
 // document.getElementById('reset_button').addEventListener('click', handleReset);
 document.getElementById('test').addEventListener('click', function() {minutes = -1;});
+document.getElementById('userGoalInput').addEventListener('input', handleInput);
 
 //----------->
 //--------------Cheat Sheet Globals-------------->

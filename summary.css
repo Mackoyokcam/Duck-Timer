@@ -2,36 +2,43 @@
   font-family:sans-serif;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   background-color: #f4f0bb;
+  height: 100%;
 }
 
 header {
-  padding-top:10px;
-  padding-bottom:20px;
+  height: 10%;
   background-color:#f1c802;
-  height:40px;
-  margin-bottom: 20px;
+  /*margin-bottom: 20px;*/
   border: 2px solid black;
 }
 
 footer {
-  height:70px;
+  height: 10%;
   background-color:#f1c802;
-  position: relative;
-  margin-top: 20px;
-  right: 0px;
-  left: 0px;
-  bottom: 0px;
+  /*margin-top: 20px;*/
   border: 2px solid black;
 }
 
 main {
   width: 960px;
+  height: 80%;
   margin: 0px auto;
   border: 5px solid black;
-  padding: 20px;
+  /*padding: 20px;*/
   background-color:#f1c802;
+}
+
+h1 {
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 section div {
