@@ -18,6 +18,10 @@ if (localStorage.times) { // Local Storage exists
   // Display solved problems
   for(var key in times.goal) {
     divElement = document.createElement('div');
+    but = document.createElement('button');
+    but.textContent = 'X';
+    but.addEventListener('click', removeItemSolved);
+    divElement.appendChild(but);
     divElement.id = times.goal[key];
     pElement = document.createElement('p');
     pElement.textContent = 'Problem: ' + key;
@@ -25,16 +29,16 @@ if (localStorage.times) { // Local Storage exists
     pElement = document.createElement('p');
     pElement.textContent = 'Solution: ' + times.goal[key];
     divElement.appendChild(pElement);
-    but = document.createElement('button');
-    but.textContent = 'X';
-    but.addEventListener('click', removeItemSolved);
-    divElement.appendChild(but);
     solvedProblems.appendChild(divElement);
   }
 
   // Display unsolved problems
   for(key in times.unsolved) {
     divElement = document.createElement('div');
+    but = document.createElement('button');
+    but.textContent = 'X';
+    but.addEventListener('click', removeItemUnsolved);
+    divElement.appendChild(but);
     divElement.id = times.unsolved[key];
     pElement = document.createElement('p');
     pElement.textContent = 'Problem: ' + key;
@@ -42,10 +46,6 @@ if (localStorage.times) { // Local Storage exists
     pElement = document.createElement('p');
     pElement.textContent = 'Comment: ' + times.unsolved[key];
     divElement.appendChild(pElement);
-    but = document.createElement('button');
-    but.textContent = 'X';
-    but.addEventListener('click', removeItemUnsolved);
-    divElement.appendChild(but);
     unsolvedProblems.appendChild(divElement);
   }
 

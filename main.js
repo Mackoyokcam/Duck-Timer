@@ -23,7 +23,7 @@ var minutes = 15;
 var seconds = 0;
 var timer;
 
-document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
+document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
 document.getElementById('done_button').disabled = true;
 document.getElementById('done_button').style.opacity = 0.5;
 document.getElementById('duck_message').textContent = 'Hello ' + name + '!';
@@ -107,7 +107,7 @@ function handleReset() {
   seconds = 0;
   messageInterval = intervalHolder;
   timer = clearInterval(timer);
-  document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
+  document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
   document.getElementById('done_button').disabled = true;
   document.getElementById('done_button').style.opacity = 0.5;
   document.getElementById('start_button').disabled = false;
@@ -160,7 +160,7 @@ function handleStart() {
 
       // Send info to summary page
     } else {
-      document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
+      document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
     }
   }, 1000);
 }
