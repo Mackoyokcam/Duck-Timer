@@ -1,8 +1,9 @@
 'use strict';
 
 // Get this info from localStorage
-var name = 'Johnny';
+var userName = JSON.parse(localStorage.getItem(userName));
 var duckMessages = inspMessages; // Located in messages.js
+
 
 var minutes = 15;
 var seconds = 0;
@@ -16,6 +17,21 @@ document.getElementById('duck_message').textContent = 'Hello ' + name + '!';
 var messageInterval = 1;
 var intervalHolder = messageInterval;
 var theDuck = new Duck(duckMessages);
+
+
+//when user enters info and presses start, goal changes
+
+
+
+function showGoal() {
+  var userGoal = document.getElementById('userGoalInput').value;
+  var divEl = document.getElementById('theGoalOutPut');
+  var pEl = document.createElement('p');
+  pEl.textContent = userGoal;
+  divEl.appendChild(pEl);
+
+}
+
 
 function Duck(messages) {
   this.messages = messages;
@@ -66,7 +82,7 @@ function handleStart() {
   document.getElementById('start_button').style.opacity = 0.5;
   document.getElementById('done_button').disabled = false;
   document.getElementById('done_button').style.opacity = 1;
-
+  showGoal();
   timer = setInterval(function() {
     seconds--;
     // 1 minute has has passed
