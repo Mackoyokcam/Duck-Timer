@@ -1,11 +1,10 @@
 'use strict';
 
-var name;
+var name = 'Johnny';
 if(localStorage.userName) {
   name = JSON.parse(localStorage.userName);
-} else {
-  name = 'Johnny';
 }
+
 var duckMessages = inspMessages; // Located in messages.js
 
 var times = {};
@@ -38,9 +37,21 @@ function showGoal() {
   var userGoal = document.getElementById('userGoalInput').value;
   var divEl = document.getElementById('theGoalOutPut');
   var pEl = document.createElement('p');
+<<<<<<< HEAD
   pEl.textContent = userGoal;
   divEl.appendChild(pEl);
 
+=======
+  pEl.id = 'userGoal';
+  pEl.textContent = name + ', your goal: ' + userGoal ;
+  divEl.appendChild(pEl);
+
+
+
+  var elem = document.getElementById('goalForm');
+  elem.parentNode.removeChild(elem);
+
+>>>>>>> master
 }
 
 // Duck Constructor
