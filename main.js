@@ -14,7 +14,9 @@ if (localStorage.times) { // old user
   times = JSON.parse(localStorage.times);
 } else { // new user
   times = {
-    'user': name
+    'userName': name,
+    'goal': {},
+    'unsolved': {}
   };
 }
 
@@ -39,7 +41,7 @@ function showGoal() {
   var divEl = document.getElementById('theGoalOutPut');
   var pEl = document.createElement('p');
   pEl.id = 'userGoal';
-  pEl.textContent = name + ', your goal: ' + userGoal;
+  pEl.textContent = name + ', your goal: ' + userGoal ;
   divEl.appendChild(pEl);
 
 
@@ -136,7 +138,25 @@ function handleStart() {
     if (minutes < 0) {
       clearInterval(timer);
       document.getElementById('timer').innerHTML = 'EXPIRED';
-      window.location.href = 'summary.html';
+      var jqPrompt = {
+        state0: {
+          title: 'Name',
+          html:'<label>Comment: <input type="text" name="comment" value=""></label><br />',
+          buttons: { Comment: 1 },
+          focus: 'input[name="comment"]',
+          submit:function(e,v,m,f){
+            console.log(f);
+            e.preventDefault();
+            $.prompt.close();
+
+            // store in array
+            times.unsolved[document.getElementById('userGoal').textContent] = f.comment;
+            localStorage.times = JSON.stringify(times);
+            window.location.href = 'summary.html';
+          }
+        }
+      };
+      $.prompt(jqPrompt);
 
       // Send info to summary page
     } else {
@@ -148,6 +168,7 @@ function handleStart() {
 document.getElementById('start_button').addEventListener('click', handleStart);
 document.getElementById('done_button').addEventListener('click', handleStop);
 document.getElementById('reset_button').addEventListener('click', handleReset);
+document.getElementById('test').addEventListener('click', function() {minutes = -1;});
 
 //----------->
 //--------------Cheat Sheet Globals-------------->
@@ -178,7 +199,45 @@ var cheatSheet = {
     var h4 = document.createElement('h2');
     h4.textContent = 'RefrenceError: Can\'t find variable: height';
     section.appendChild(h4);
+    var namedTitle = document.createElement('h2');
+    namedTitle.textContent = 'NAMED FUNCTION IS UNDEFINED';
+    section.appendChild(namedTitle);
+    var namedCode = document.createElement('h3');
+    namedCode.textContent = 'document.write(randomFunction());';
+    section.appendChild(namedCode);
+    var namedError = document.createElement('h2');
+    namedError.textContent = 'RefrenceError: Can\'t find varfiable: randomFunction';
+    section.appendChild(namedError);
     console.log('RefrenceError cheat printed...');
+  },
+  //+++++++++++++++++++++ syntaxError +++++++++++++++++++>
+  syntaxError: function (){
+    clear();
+    var mainTitle = document.createElement('h1');
+    mainTitle.textContent = 'SyntaxError';
+    section.appendChild(mainTitle);
+    var mainSub = document.createElement('h2');
+    mainSub.textContent = 'SYNTAX IS NOT CORRECT';
+    section.appendChild(mainSub);
+    var description = document.createElement('p');
+    description.textContent = 'This is caused by incorrect use of the rules of the language. It is often the result of a simple typo.';
+    section.appendChild(description);
+    var mismatch = document.createElement('h2');
+    mismatch.textContent = 'MISMATCH OR UNCLOSED QUOTES';
+    var mismatchExp = document.createElement('h3');
+    mismatchExp.textContent = 'document.write(\"Howdy\')';
+    section.appendChild(mismatchExp);
+    var mismatchError = document.createElement('h2');
+    mismatchError.textContent = 'SyntaxErro: Unexpected EOF';
+    section.appendChild(mismatchError);
+    var missBracket = document.createElement('h2');
+    missBracket.textContent = 'MISSING CLOSING BRACKET';
+    section.appendChild(missBracket);
+    var missBrackCode = document.createElement('h3');
+    missBrackCode.textContent = 'documnet.getElementById(\'page\'';
+    section.appendChild(missBrackCode);
+
+    console.log('SyntaxError is printing!');
   }
 };
 //------------Clear Section----------------->
@@ -186,4 +245,4 @@ function clear(){
   document.getElementById('cheat_sheet').innerHTML = '';
 }
 //-------------Event Listener---------------->
-submit.addEventListener('click',cheatSheet.referenceError);
+submit.addEventListener('click',cheatSheet.syntaxError);

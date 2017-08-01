@@ -9,15 +9,40 @@
     <title>Timer</title>
   </head>
   <body>
-    <p id="duck_message"></p>
-    <img id="rubber_duck" src="imgs/Rubber-duck.png"></img>
 
+    <header>
+      <div id="header">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          |
+          <li><a href="summary.html">Summary</a></li>
+          |
+          <li><a href="about-me.html">About Us</a></li>
+
+        </ul>
+      </div>
+    </header>
+<div id="main">
+    <form>
+
+      <input id="userGoalInput" type="text" name="firstname" placeholder="Your psuedo-code written goal:"> </input>
+      <p id="duck_message"></p>
+
+    </form>
+
+    <div id="theGoalOutPut"> </div>            <!-- user goal that will pop up when button is clicked-->
+
+    <!-- Cheat Sheet -->
 
     <div id="timer_container">
+      <img id="rubber_duck" src="imgs/Rubber-duck.png"></img>
       <section id="timer"></section>
+    </div>
+    <div id="buttons">
       <button id="start_button">Start</button>
       <button id="done_button">Done</button>
       <button id="reset_button">Reset</button>
+      <button id="test">Test</button>
     </div>
 
     <form id = "goalForm">
@@ -30,11 +55,13 @@
 <!-- Cheat Sheet -->
     <button type:"submit" id="submit" name="submit">ReferenceError</button>
     <section id="cheat_sheet">
-  </section>
-
+    </section>
+</div>
 <!-- Script! -->
-  <script src="messages.js"></script>
-  <script src="main.js"></script>
+<script src="messages.js"></script>
+<script src="main.js"></script>
 
   </body>
+  <footer>
+  </footer>
 </html>
