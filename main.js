@@ -223,6 +223,7 @@ var cheatSheet = {
     var description = document.createElement('p');
     description.textContent = 'This is caused by incorrect use of the rules of the language. It is often the result of a simple typo.';
     section.appendChild(description);
+//--->
     var mismatch = document.createElement('h2');
     mismatch.textContent = 'MISMATCH OR UNCLOSED QUOTES';
     var mismatchExp = document.createElement('h3');
@@ -231,19 +232,113 @@ var cheatSheet = {
     var mismatchError = document.createElement('h2');
     mismatchError.textContent = 'SyntaxErro: Unexpected EOF';
     section.appendChild(mismatchError);
+//--->
     var missBracket = document.createElement('h2');
     missBracket.textContent = 'MISSING CLOSING BRACKET';
     section.appendChild(missBracket);
     var missBrackCode = document.createElement('h3');
     missBrackCode.textContent = 'documnet.getElementById(\'page\'';
     section.appendChild(missBrackCode);
-
-    console.log('SyntaxError is printing!');
+    var missError = document.createElement('h2');
+    missError.textContent = 'SyntaxError: Expected token \')\'';
+    section.appendChild(missError);
+//--->
+    var missinComma = document.createElement('h2');
+    missinComma.textContent = 'MISSING COMMA IN ARRAY';
+    section.appendChild(missinComma);
+    var missinCommaTip = document.createElement('p');
+    missinCommaTip.textContent = 'Would be same for missing ] at the end';
+    section.appendChild(missinCommaTip);
+    var missinCommaCode = document.createElement('h3');
+    missinCommaCode.textContent = 'var list = [\'Item 1\', \'Itme 2\' \'Item 3\'];';
+    section.appendChild(missinCommaCode);
+    var missinCommaError = document.createElement('h2');
+    missinCommaError.textContent = 'SyntaxError: Expected token \']\'';
+    section.appendChild(missinCommaError);
+//--->
+    var malfTitle = document.createElement('h2');
+    malfTitle.textContent = 'MALFORMED PROPERTY NAME';
+    section.appendChild(malfTitle);
+    var malfTip = document.createElement('p');
+    malfTip.textContent = 'It has a pace but is not surrounded by quote marks';
+    section.appendChild(malfTip);
+    var malfCode = document.createElement('h3');
+    malfCode.textContent = 'user = {first name: \"Ben\", lastName: \"Lee\"};';
+    section.appendChild(malfCode);
+    var malfError = document.createElement('h2');
+    malfError.textContent = 'SyntaxError: Expected an identifier but found \'name\' instead';
+    section.appendChild(malfError); console.log('SyntaxError is printing!');
+  },
+  //+++++++++++ URIError +++++++++++++++++++>
+  uriError : function() {
+    var uriErrorTitle = document.createElement('h1');
+    uriErrorTitle.textContent = 'URIError';
+    section.appendChild(uriErrorTitle);
+    var uriDescription = document.createElement('p');
+    uriDescription.textContent = 'If these characters are not escaped in URIs, they will cause an error: / ? & # : ;';
+    section.appendChild(uriDescription);
+//--->
+    var characterEscape = document.createElement('h2');
+    characterEscape.textContent = 'CHARACTERS ARE NOT ESCAPED';
+    section.appendChild(characterEscape);
+    var characterCode = document.createElement('h3');
+    characterCode.textContent = 'decodeURI(\'http://bbc.com/news.php?a=1\')  \"?\"';
+    section.appendChild(characterCode);
+    var characterError = document.createElement('h2');
+    characterError.textContent = 'URIError: URI error';
+    section.appendChild(characterError);
+    console.log('URIError is printing!');
+  },
+  //------------ TypeError ------------------->
+  typeError: function() {
+    var typeErrorTitle = document.createElement('h1');
+    typeErrorTitle.textContent = 'TypeError';
+    section.appendChild(typeErrorTitle);
+    var typeSub = document.createElement('h2');
+    typeSub.textContent = 'VALUE IS UNEXPECTED DATA TYPE';
+    section.appendChild(typeSub);
+    var typeDescription = document.createElement('p');
+    typeDescription.textContent = 'This is often caused by trying to use an object or method that does not exist.';
+    section.appendChild(typeDescription);
+//--->
+    var incorCase = document.createElement('h2');
+    incorCase.textContent = 'INCORRECT CASE FOR document OBJECT';
+    section.appendChild(incorCase);
+    var incorCaseCode = document.createElement('h3');
+    incorCaseCode.textContent = 'Document.write(\'Oops!\');' + ' \"D\"<-';
+    section.appendChild(incorCaseCode);
+    var incorCaseError = document.createElement('h2');
+    incorCaseError.textContent = 'TypeError: \'undifined\' is fnot a function (evaluating \'Document.write(\'Oops!\')\')';
+    section.appendChild(incorCaseError);
+//--->
+    var incorCaseWrite = document.createElement('h2');
+    incorCaseWrite.textContent = 'INCORRECT CASE FOR write() METHOD';section.appendChild(incorCaseWrite);
+    var incorCaseCodeWrite = document.createElement('h3');
+    incorCaseCodeWrite.textContent = 'document.Write(\'Oops!\');' + ' \"W\"<-';
+    section.appendChild(incorCaseCodeWrite);
+    var incorCaseErrorWrite = document.createElement('h2');
+    incorCaseErrorWrite.textContent = 'TypeError: \'undifined\' is fnot a function (evaluating \'document.Write(\'Oops!\')\')';
+    section.appendChild(incorCaseErrorWrite);
+//--->
+    var method = document.createElement('h2');
+    method.textContent = 'METHOD DOES NOT EXIST';
+    section.appendChild(method);
+    var methodCode1 = document.createElement('h3');
+    methodCode1.textContent = 'var box = {}; ' + ' // Creat empty object';
+    section.appendChild(methodCode1);
+    var methodCode2 = document.createElement('h3');
+    methodCode2.textContent = 'box.getArea ' + ' // Try to access getArea()';
+    section.appendChild(methodCode2);
+    var methodError = document.createElement('h2');
+    methodError.textContent = 'TypeError: \'undefind\' is not a function (evaluating \'box.getArea()\')';
+    section.appendChild(methodError);
+//--->
   }
+
 };
 //------------Clear Section----------------->
 function clear(){
   document.getElementById('cheat_sheet').innerHTML = '';
 }
 //-------------Event Listener---------------->
-submit.addEventListener('click',cheatSheet.syntaxError);
+submit.addEventListener('click',cheatSheet.uriError);
