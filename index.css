@@ -1,7 +1,8 @@
 
 *{
-/*   border: solid black 2px; */
+   /*border: solid black 2px;*/
   font-family:sans-serif;
+
 }
 h1{
   vertical-align: middle;
@@ -17,6 +18,7 @@ header{
   padding-bottom:20px;
   background-color:#f1c802;
   height:40px;
+  margin-bottom: 20px;
 }
 body{
   /*border: solid black 2px;*/
@@ -28,6 +30,7 @@ main{
 
   padding-top: 20px;
   box-shadow: 10px 10px 5px #888888;
+  border-radius: 25px;
   width:960px;
   height:500px;
   margin:0px auto;
@@ -59,15 +62,19 @@ li a {
     margin-right:10px;
     font-weight: bold;
     background-color:#f1c802;
+    border-radius: 25px;
+
 }
 a:hover{
   color:white;
   background-color:#F4F0BB;
+  border-radius: 25px;
 }
 
 a:visited{
   text-decoration: none;
   color:black;
+  border-radius: 25px;
 }
 #main{
 
@@ -77,19 +84,16 @@ a:visited{
 }
 
 #aboutProject{
+  font-size: 14pt;
+  line-height: 21px;
   width:430px;
   margin:0 auto;
 }
 
-#name{
+#formName{
+  padding-top: 10px;
   width:430px;
   margin:0 auto;
-
-
-form {
-
-  align: center;
-  margin-left: 400px;
-  margin-top: 400px;
+  text-align: center;
 
 }
