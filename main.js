@@ -1,13 +1,27 @@
 'use strict';
 
-// Get this info from localStorage
-var userName = JSON.parse(localStorage.getItem(userName));
+var name;
+if(localStorage.userName) {
+  name = JSON.parse(localStorage.userName);
+} else {
+  name = 'Johnny';
+}
 var duckMessages = inspMessages; // Located in messages.js
 
+var times = {};
+
+if (localStorage.times) { // old user
+  times = JSON.parse(localStorage.times);
+} else { // new user
+  times = {
+    'user': name
+  };
+}
 
 var minutes = 15;
 var seconds = 0;
 var timer;
+
 document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
 document.getElementById('done_button').disabled = true;
 document.getElementById('done_button').style.opacity = 0.5;
@@ -20,9 +34,6 @@ var theDuck = new Duck(duckMessages);
 
 
 //when user enters info and presses start, goal changes
-
-
-
 function showGoal() {
   var userGoal = document.getElementById('userGoalInput').value;
   var divEl = document.getElementById('theGoalOutPut');
@@ -32,7 +43,7 @@ function showGoal() {
 
 }
 
-
+// Duck Constructor
 function Duck(messages) {
   this.messages = messages;
   this.previous = -5; // Previous message index
@@ -48,6 +59,7 @@ function Duck(messages) {
   };
 }
 
+// Generates a random number used to index the messages for the duck
 function randomNumber(min, max) {
   min = Math.ceil(min);
   max = Math.floor(max);
