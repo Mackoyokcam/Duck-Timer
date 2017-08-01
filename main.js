@@ -347,6 +347,55 @@ var cheatSheet = {
     var domError = document.createElement('h2');
     domError.textContent = 'TypeError: \'null\' is not an object (evaluating \'el.innerHTML = \'Mango\')';
     section.appendChild(domError);
+  },
+  //----------- Range Error ----------------->
+  rangeError: function(){
+    clear();
+    var rangeErrorTitle = document.createElement('h1');
+    rangeErrorTitle.textContent = 'RangeError';
+    section.appendChild(rangeErrorTitle);
+    var rangeSub = document.createElement('h2');
+    rangeSub.textContent = 'NUMBER OUTSIDE OF RANGE';
+    section.appendChild(rangeSub);
+    var rangeDescription = document.createElement('p');
+    rangeDescription.textContent = 'If you can call a function using numbers outside of its accepted range';
+    section.appendChild(rangeDescription);
+//--->
+    var cannotCreateArray = document.createElement('h2');
+    cannotCreateArray.textContent = 'CANNOT CREATE ARRAY WITH -1 ITEMS';
+    section.appendChild(cannotCreateArray);
+    var cannotCode = document.createElement('h3');
+    cannotCode.textContent = 'var anArray = new Array(-1);';
+    section.appendChild(cannotCode);
+    var cannotError = document.createElement('h2');
+    cannotError.textContent = 'RangeError: Array size is not a small enough positive integer';
+    section.appendChild(cannotError);
+//--->
+    var number = document.createElement('h2');
+    number.textContent = 'NUMBER OF DIGITS AFTER DECIMAL IN tofixed() CAN ONLY BE 0-20';
+    section.appendChild(number);
+    var numberCode1 = document.createElement('h3');
+    numberCode1.textContent = 'var price = 9.99;';
+    section.appendChild(numberCode1);
+    var numberCode2 = document.createElement('h3');
+    numberCode2.textContent = 'price.toFixed(21); ' + ' \"21\"<-';
+    section.appendChild(numberCode2);
+    var numberError = document.createElement('h2');
+    numberError.textContent = 'RangeError: toFixed() argument must be between 0 and 20';
+    section.appendChild(numberError);
+//--->
+    var numberOf = document.createElement('h2');
+    numberOf.textContent = 'NUMBER OF DIGITS IN toPrecion() CAN';
+    section.appendChild(numberOf);
+    var numberOfCode1 = document.createElement('h3');
+    numberOfCode1.textContent = 'num = 2.3456';
+    section.appendChild(numberOfCode1);
+    var numberOfCode2 = document.createElement('h3');
+    numberOfCode2.textContent = 'num.toPrecision(22); ' + ' \"22\"<-';
+    section.appendChild(numberOfCode2);
+    var numberOfError = document.createElement('h2');
+    numberOfError.textContent = 'RangeError: toPrecision() argument must be between 0 and 21';
+    section.appendChild(numberOfError);
   }
 
 };
