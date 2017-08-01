@@ -10,22 +10,22 @@
 h1{
   font-family:arial;
   text-align: center;
-
 }
 
 #theGoalOutPut {
-  font-size: 20px;
+  font-size: 20pt;
   font-weight: bold;
   text-align: center;
 
+}
+#theGoalOutPut p{
 
 }
-
 header{
   padding-top:10px;
   padding-bottom:20px;
   background-color:#f1c802;
-  height:40px;
+  height:10%;
   margin-bottom: 20px;
 }
 body{
@@ -50,9 +50,10 @@ footer{
   height:70px;
   background-color:#f1c802;
   margin-top: 20px;
-  position: absolute;
+  position: relative;
   bottom: 0px;
   width: 100%;
+
 
 }
 ul {
@@ -63,8 +64,6 @@ ul {
 
 li{
     display:inline;
-
-
 }
 
 a {
@@ -147,7 +146,7 @@ margin: 0 auto;
 }
 #userGoalInput {
 width: 400px;
-height: 100px;
+height: 50px;
 font-size: 20pt;
 
 }
@@ -174,11 +173,61 @@ font-size: 20pt;
   display: inline;
   width: 15%;
   height: 15%;
+  /*margin-top: 35px;*/
 }
 
 #duck_message {
-  position: absolute;
-  display: inline-block;
+  position: relative;
+  display: inline;
   margin-left: 30px;
   border: 2px solid black;
+}
+
+/*CHAT BUBBLE========================================== CSS*/
+/* container */
+.container {
+  padding: 5% 5%;
+}
+
+
+.talk-bubble {
+    margin: 40px;
+  display: inline-block;
+  position: relative;
+    width: 200px;
+    height: auto;
+    background-color: lightyellow;
+}
+.border{
+  border: 8px solid #666;
+}
+.round{
+  border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+}
+
+.tri-right.right-in:after{
+    content: ' ';
+    position: absolute;
+    width: 0;
+    height: 0;
+  left: auto;
+    right: -20px;
+  top: 38px;
+    bottom: auto;
+    border: 12px solid;
+    border-color: lightyellow transparent transparent lightyellow;
+}
+
+/* talk bubble contents */
+.talktext{
+  padding: 1em;
+    text-align: left;
+  line-height: 1.5em;
+}
+.talktext p{
+  /* remove webkit p margins */
+  -webkit-margin-before: 0em;
+  -webkit-margin-after: 0em;
 }
