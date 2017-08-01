@@ -36,11 +36,12 @@ var theDuck = new Duck(duckMessages);
 
 //when user enters info and presses start, goal changes
 function showGoal() {
+  console.log('showing goal');
   var userGoal = document.getElementById('userGoalInput').value;
   var divEl = document.getElementById('theGoalOutPut');
   var pEl = document.createElement('p');
   pEl.id = 'userGoal';
-  pEl.textContent = name + ', your goal: ' + userGoal ;
+  pEl.textContent = userGoal;
   divEl.appendChild(pEl);
 
 
