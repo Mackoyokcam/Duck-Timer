@@ -8,8 +8,8 @@
     font-family:rubberDucky;
     src:url('TPF Rubber Ducky.ttf');
 }
-h1{
-  vertical-align: ;
+#duckyHead{
+
   font-family:rubberDucky;
   /*border:solid black 2px;*/
   text-align: center;
@@ -42,11 +42,14 @@ main{
 }
 
 footer{
-  position: relative;
   height:70px;
   background-color:#f1c802;
   margin-top: 20px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
+
 ul {
 
     text-align:right;
@@ -91,8 +94,8 @@ input[type=text], select {
     box-sizing: border-box;
     background-color: #f1c802;
   }
+
   #userNameSubmitButton {
-      width:;
       background-color: #B94618;
       color: white;
       padding: 14px 20px;
@@ -101,13 +104,11 @@ input[type=text], select {
       border-radius: 4px;
       cursor: pointer;
   }
+
   form a.button {
-    /*-webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;*/
 font-size: 10pt;
-    text-decoration: none;
-    color: white ;
+text-decoration: none;
+color: white ;
   }
 
 #main{
