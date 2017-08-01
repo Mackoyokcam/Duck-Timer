@@ -14,7 +14,9 @@ if (localStorage.times) { // old user
   times = JSON.parse(localStorage.times);
 } else { // new user
   times = {
-    'user': name
+    'userName': name,
+    'goal': {},
+    'unsolved': {}
   };
 }
 
@@ -136,7 +138,25 @@ function handleStart() {
     if (minutes < 0) {
       clearInterval(timer);
       document.getElementById('timer').innerHTML = 'EXPIRED';
-      window.location.href = 'summary.html';
+      var jqPrompt = {
+        state0: {
+          title: 'Name',
+          html:'<label>Comment: <input type="text" name="comment" value=""></label><br />',
+          buttons: { Comment: 1 },
+          focus: 'input[name="comment"]',
+          submit:function(e,v,m,f){
+            console.log(f);
+            e.preventDefault();
+            $.prompt.close();
+
+            // store in array
+            times.unsolved[document.getElementById('userGoal').textContent] = f.comment;
+            localStorage.times = JSON.stringify(times);
+            window.location.href = 'summary.html';
+          }
+        }
+      };
+      $.prompt(jqPrompt);
 
       // Send info to summary page
     } else {
@@ -148,6 +168,7 @@ function handleStart() {
 document.getElementById('start_button').addEventListener('click', handleStart);
 document.getElementById('done_button').addEventListener('click', handleStop);
 document.getElementById('reset_button').addEventListener('click', handleReset);
+document.getElementById('test').addEventListener('click', function() {minutes = -1;});
 
 //----------->
 //--------------Cheat Sheet Globals-------------->
