@@ -35,21 +35,6 @@ function showGoal() {
 
 function Duck(messages) {
   this.messages = messages;
-  this.displayMessage = function() {
-    // Display a message to user
-    document.getElementById('duck_message').textContent = messages[0];
-  };
-}
-
-// Call function every 1 second
-var timer = setInterval(function() {
-
-var intervalHolder = messageInterval;
-var theDuck = new Duck(duckMessages);
-
-
-function Duck(messages) {
-  this.messages = messages;
   this.previous = -5; // Previous message index
   this.displayMessage = function() {
     // Display a message to user
@@ -62,31 +47,6 @@ function Duck(messages) {
     this.previous = rando;
   };
 }
-
-  // 1 minute has has passed
-  if (seconds === -1) {
-    minutes--;
-    seconds = 59;
-    if (messageInterval === 0) {
-      // Send message to duck
-      theDuck.displayMessage();
-    }
-    messageInterval--;
-  }
-  // Time expired
-  if (minutes < 0) {
-    clearInterval(timer);
-    document.getElementById('timer').innerHTML = 'EXPIRED';
-    // Send info to summary page
-  }
-
-  // Every interval, send message to duck
-
-  document.getElementById('timer').textContent = minutes + 'm : ' + seconds + 's';
-}, 1000);
-
-
-console.log(JSON.parse(localStorage.getItem(userName)));
 
 function randomNumber(min, max) {
   min = Math.ceil(min);
