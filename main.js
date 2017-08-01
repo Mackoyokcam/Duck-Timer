@@ -271,6 +271,7 @@ var cheatSheet = {
   },
   //+++++++++++ URIError +++++++++++++++++++>
   uriError : function() {
+    clear();
     var uriErrorTitle = document.createElement('h1');
     uriErrorTitle.textContent = 'URIError';
     section.appendChild(uriErrorTitle);
@@ -291,6 +292,7 @@ var cheatSheet = {
   },
   //------------ TypeError ------------------->
   typeError: function() {
+    clear();
     var typeErrorTitle = document.createElement('h1');
     typeErrorTitle.textContent = 'TypeError';
     section.appendChild(typeErrorTitle);
@@ -333,6 +335,18 @@ var cheatSheet = {
     methodError.textContent = 'TypeError: \'undefind\' is not a function (evaluating \'box.getArea()\')';
     section.appendChild(methodError);
 //--->
+    var dom = document.createElement('h2');
+    dom.textContent = 'DOM NODE DOES NOT EXIST';
+    section.appendChild(dom);
+    var domCode1 = document.createElement('h3');
+    domCode1.textContent = 'var el = document.getElementById(\'z\'); ' + ' \"z\" <-';
+    section.appendChild(domCode1);
+    var domCode2 = document.createElement('h3');
+    domCode2.textContent = 'el.innerHTML = \'Mango\'';
+    section.appendChild(domCode2);
+    var domError = document.createElement('h2');
+    domError.textContent = 'TypeError: \'null\' is not an object (evaluating \'el.innerHTML = \'Mango\')';
+    section.appendChild(domError);
   }
 
 };
