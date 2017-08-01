@@ -1,3 +1,109 @@
+
+*{
+   /*border: solid black 2px;*/
+  font-family:sans-serif;
+}
+@font-face {
+    font-family:rubberDucky;
+    src:url('TPF Rubber Ducky.ttf');
+}
+h1{
+  font-family:arial;
+  text-align: center;
+
+}
+
+header{
+  padding-top:10px;
+  padding-bottom:20px;
+  background-color:#f1c802;
+  height:40px;
+  margin-bottom: 20px;
+}
+body{
+  /*border: solid black 2px;*/
+  background-color:#F4F0BB;
+  margin: 0px auto;
+}
+
+main{
+
+  padding-top: 20px;
+  box-shadow: 10px 10px 5px #888888;
+  border-radius: 25px;
+  width:960px;
+  height:700px;
+  margin:0px auto;
+  background-color: WHITE;
+}
+
+footer{
+  position: relative;
+  height:70px;
+  background-color:#f1c802;
+  margin-top: 20px;
+}
+ul {
+
+    text-align:right;
+
+}
+
+li{
+    display:inline;
+
+
+}
+
+a {
+
+    text-decoration:none;
+    padding:10px;
+    margin-right:10px;
+    font-weight: bold;
+    background-color:#f1c802;
+    border-radius: 25px;
+    margin-left: 10px;
+}
+
+
+a:hover{
+  color:white;
+  background-color:#F4F0BB;
+  border-radius: 25px;
+}
+
+a:visited{
+  text-decoration: none;
+  color:black;
+  border-radius: 25px;
+}
+
+#main{
+  margin: 0 auto;
+  width:960px;
+}
+
+#aboutUs{
+  width:400px;
+  display: inline-block;
+  padding-right:30px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+#name{
+  width:430px;
+  margin:0 auto;
+}
+.profPic{
+  border-radius: 15px;
+  float:left;
+  padding: 0px 10px 0px 0px;
+}
+
+
+
 #timer_container {
   width: 960px;
   text-align: center;
@@ -7,30 +113,44 @@
 button {
   margin-top: 10px;
 }
-#userGoalInput {
-width: 600px;
-height: 100px;
 
+form{
+display: block;
+text-align: center;
+margin: 0 auto;
+}
+#userGoalInput {
+width: 400px;
+height: 100px;
+font-size: 20pt;
 
 }
-#timer {
-  border: 2px solid black;
-  height: 40px;
-  width: 300px;
-  margin: 0px auto;
-  margin-top: 100px;
+#buttons{
   text-align: center;
-  font-size: 30px;
+  margin: 0 auto;
+}
+#timer {
+  /*border: none;*/
+  text-align: center;
+  margin: 0 auto;
+  text-align: center;
+  font-size:80px;
   font-weight: bold;
+  width:400px;
+  font-family: rubberDucky;
 }
 
 #rubber_duck {
-  width: 400px;
-  height: 400px;
+  position: relative;
+  float: right;
+  display: inline;
+  width: 15%;
+  height: 15%;
 }
 
 #duck_message {
-  width: 200px;
-  height: 50px;
+  position: absolute;
+  display: inline-block;
+  margin-left: 30px;
   border: 2px solid black;
 }

@@ -9,32 +9,49 @@
     <title>Timer</title>
   </head>
   <body>
-    <p id="duck_message"></p>
-    <img id="rubber_duck" src="imgs/Rubber-duck.png"></img>
 
+    <header>
+      <div id="header">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          |
+          <li><a href="summary.html">Summary</a></li>
+          |
+          <li><a href="about-me.html">About Us</a></li>
 
-    <div id="timer_container">
-      <section id="timer"></section>
-      <button id="start_button">Start</button>
-      <button id="done_button">Done</button>
-      <button id="reset_button">Reset</button>
-    </div>
-
+        </ul>
+      </div>
+    </header>
+<div id="main">
     <form>
-      Your psuedo-code written goal:<br>
-      <input id="userGoalInput" type="text" name="firstname" placeholder="Ex: add function that creates list..."> </input>
+
+      <input id="userGoalInput" type="text" name="firstname" placeholder="Your psuedo-code written goal:"> </input>
+      <p id="duck_message"></p>
+
     </form>
 
     <div id="theGoalOutPut"> </div>            <!-- user goal that will pop up when button is clicked-->
 
-<!-- Cheat Sheet -->
+    <!-- Cheat Sheet -->
+
+    <div id="timer_container">
+      <img id="rubber_duck" src="imgs/Rubber-duck.png"></img>
+      <section id="timer"></section>
+    </div>
+    <div id="buttons">
+      <button id="start_button">Start</button>
+      <button id="done_button">Done</button>
+      <button id="reset_button">Reset</button>
+    </div>
     <button type:"submit" id="submit" name="submit">ReferenceError</button>
     <section id="cheat_sheet">
-  </section>
-
+    </section>
+</div>
 <!-- Script! -->
-  <script src="messages.js"></script>
-  <script src="main.js"></script>
+<script src="messages.js"></script>
+<script src="main.js"></script>
 
   </body>
+  <footer>
+  </footer>
 </html>
