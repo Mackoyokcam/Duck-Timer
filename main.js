@@ -58,9 +58,9 @@ function Duck(messages) {
   this.displayMessage = function() {
     // Display a message to user
     var rando = randomNumber(0, this.messages.length);
+    console.log('Display Called!');
     while(this.previous === rando) {
       rando = randomNumber(0, this.messages.length);
-      console.log('pew');
     }
     document.getElementById('duck_message').textContent = this.messages[rando];
     this.previous = rando;
@@ -103,17 +103,17 @@ function handleStop() {
 }
 
 // Reset timer to 15 minutes, stop the clock
-function handleReset() {
-  minutes = 15;
-  seconds = 0;
-  messageInterval = intervalHolder;
-  timer = clearInterval(timer);
-  document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
-  document.getElementById('done_button').disabled = true;
-  document.getElementById('done_button').style.opacity = 0.5;
-  document.getElementById('start_button').disabled = false;
-  document.getElementById('start_button').style.opacity = 1;
-}
+// function handleReset() {
+//   minutes = 15;
+//   seconds = 0;
+//   messageInterval = intervalHolder;
+//   timer = clearInterval(timer);
+//   document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
+//   document.getElementById('done_button').disabled = true;
+//   document.getElementById('done_button').style.opacity = 0.5;
+//   document.getElementById('start_button').disabled = false;
+//   document.getElementById('start_button').style.opacity = 1;
+// }
 
 // Start event handler
 function handleStart() {
@@ -127,11 +127,12 @@ function handleStart() {
     // 1 minute has has passed
     if (seconds === -1) {
       minutes--;
-      seconds = 59;
+      seconds = 5;
       if (messageInterval === 0) {
         // Send message to duck
+        console.log('Before call....');
         theDuck.displayMessage();
-        messageInterval = intervalHolder + 1;
+        messageInterval = intervalHolder;
       }
       messageInterval--;
     }
@@ -168,7 +169,7 @@ function handleStart() {
 
 document.getElementById('start_button').addEventListener('click', handleStart);
 document.getElementById('done_button').addEventListener('click', handleStop);
-document.getElementById('reset_button').addEventListener('click', handleReset);
+// document.getElementById('reset_button').addEventListener('click', handleReset);
 document.getElementById('test').addEventListener('click', function() {minutes = -1;});
 
 //----------->
