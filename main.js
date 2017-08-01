@@ -14,7 +14,8 @@ if (localStorage.times) { // old user
   times = JSON.parse(localStorage.times);
 } else { // new user
   times = {
-    'user': name
+    'user': name,
+    'goal': {}
   };
 }
 
@@ -78,15 +79,16 @@ function handleStop() {
       title: 'Name',
       html:'<label>Solution: <input type="text" name="solution" value=""></label><br />',
       buttons: { Solved: 1 },
-      //focus: "input[name='fname']",
+      focus: 'input[name="solution"]',
       submit:function(e,v,m,f){
         console.log(f);
         e.preventDefault();
         $.prompt.close();
 
         // store in array
-        times[document.getElementById('userGoal').textContent] = f.solution;
+        times.goal[document.getElementById('userGoal').textContent] = f.solution;
         localStorage.times = JSON.stringify(times);
+        window.location.href = 'summary.html';
       }
     }
   };
