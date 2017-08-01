@@ -14,9 +14,7 @@ if (localStorage.times) { // old user
   times = JSON.parse(localStorage.times);
 } else { // new user
   times = {
-    'userName': name,
-    'goal': {},
-    'unsolved': {}
+    'user': name
   };
 }
 
@@ -40,9 +38,9 @@ function showGoal() {
   var userGoal = document.getElementById('userGoalInput').value;
   var divEl = document.getElementById('theGoalOutPut');
   var pEl = document.createElement('p');
-  pEl.id = 'userGoal';
   pEl.textContent = userGoal;
   divEl.appendChild(pEl);
+
 }
 
 // Duck Constructor
@@ -75,25 +73,6 @@ function handleStop() {
   document.getElementById('start_button').disabled = false;
   document.getElementById('start_button').style.opacity = 1;
   timer = clearInterval(timer);
-  var jqPrompt = {
-    state0: {
-      title: 'Name',
-      html:'<label>Solution: <input type="text" name="solution" value=""></label><br />',
-      buttons: { Solved: 1 },
-      focus: 'input[name="solution"]',
-      submit:function(e,v,m,f){
-        console.log(f);
-        e.preventDefault();
-        $.prompt.close();
-
-        // store in array
-        times.goal[document.getElementById('userGoal').textContent] = f.solution;
-        localStorage.times = JSON.stringify(times);
-        window.location.href = 'summary.html';
-      }
-    }
-  };
-  $.prompt(jqPrompt);
 }
 
 // Reset timer to 15 minutes, stop the clock
@@ -133,25 +112,7 @@ function handleStart() {
     if (minutes < 0) {
       clearInterval(timer);
       document.getElementById('timer').innerHTML = 'EXPIRED';
-      var jqPrompt = {
-        state0: {
-          title: 'Name',
-          html:'<label>Comment: <input type="text" name="comment" value=""></label><br />',
-          buttons: { Comment: 1 },
-          focus: 'input[name="comment"]',
-          submit:function(e,v,m,f){
-            console.log(f);
-            e.preventDefault();
-            $.prompt.close();
-
-            // store in array
-            times.unsolved[document.getElementById('userGoal').textContent] = f.comment;
-            localStorage.times = JSON.stringify(times);
-            window.location.href = 'summary.html';
-          }
-        }
-      };
-      $.prompt(jqPrompt);
+      window.location.href = 'summary.html';
 
       // Send info to summary page
     } else {
@@ -163,7 +124,6 @@ function handleStart() {
 document.getElementById('start_button').addEventListener('click', handleStart);
 document.getElementById('done_button').addEventListener('click', handleStop);
 document.getElementById('reset_button').addEventListener('click', handleReset);
-document.getElementById('test').addEventListener('click', function() {minutes = -1;});
 
 //----------->
 //--------------Cheat Sheet Globals-------------->
@@ -217,6 +177,7 @@ var cheatSheet = {
     var description = document.createElement('p');
     description.textContent = 'This is caused by incorrect use of the rules of the language. It is often the result of a simple typo.';
     section.appendChild(description);
+//--->
     var mismatch = document.createElement('h2');
     mismatch.textContent = 'MISMATCH OR UNCLOSED QUOTES';
     var mismatchExp = document.createElement('h3');
@@ -225,19 +186,73 @@ var cheatSheet = {
     var mismatchError = document.createElement('h2');
     mismatchError.textContent = 'SyntaxErro: Unexpected EOF';
     section.appendChild(mismatchError);
+//--->
     var missBracket = document.createElement('h2');
     missBracket.textContent = 'MISSING CLOSING BRACKET';
     section.appendChild(missBracket);
     var missBrackCode = document.createElement('h3');
     missBrackCode.textContent = 'documnet.getElementById(\'page\'';
     section.appendChild(missBrackCode);
-
+    var missError = document.createElement('h2');
+    missError.textContent = 'SyntaxError: Expected token \')\'';
+    section.appendChild(missError);
+//--->
+    var missinComma = document.createElement('h2');
+    missinComma.textContent = 'MISSING COMMA IN ARRAY';
+    section.appendChild(missinComma);
+    var missinCommaTip = document.createElement('p');
+    missinCommaTip.textContent = 'Would be same for missing ] at the end';
+    section.appendChild(missinCommaTip);
+    var missinCommaCode = document.createElement('h3');
+    missinCommaCode.textContent = 'var list = [\'Item 1\', \'Itme 2\' \'Item 3\'];';
+    section.appendChild(missinCommaCode);
+    var missinCommaError = document.createElement('h2');
+    missinCommaError.textContent = 'SyntaxError: Expected token \']\'';
+    section.appendChild(missinCommaError);
+//--->
+    var malfTitle = document.createElement('h2');
+    malfTitle.textContent = 'MALFORMED PROPERTY NAME';
+    section.appendChild(malfTitle);
+    var malfTip = document.createElement('p');
+    malfTip.textContent = 'It has a pace but is not surrounded by quote marks';
+    section.appendChild(malfTip);
+    var malfCode = document.createElement('h3');
+    malfCode.textContent = 'user = {first name: \"Ben\", lastName: \"Lee\"};';
+    section.appendChild(malfCode);
+    var malfError = document.createElement('h2');
+    malfError.textContent = 'SyntaxError: Expected an identifier but found \'name\' instead';
+    section.appendChild(malfError);
     console.log('SyntaxError is printing!');
+  },
+  //+++++++++++ URIError +++++++++++++++++++>
+  uriError : function() {
+    var uriErrorTitle = document.createElement('h1');
+    uriErrorTitle.textContent = 'URIError';
+    section.appendChild(uriErrorTitle);
+    var uriDescription = document.createElement('p');
+    uriDescription.textContent = 'If these characters are not escaped in URIs, they will cause an error: / ? & # : ;';
+    section.appendChild(uriDescription);
+//--->
+    var characterEscape = document.createElement('h2');
+    characterEscape.textContent = 'CHARACTERS ARE NOT ESCAPED';
+    section.appendChild(characterEscape);
+    var characterCode = document.createElement('h3');
+    characterCode.textContent = 'decodeURI(\'http://bbc.com/news.php?a=1\')  \"?\"';
+    section.appendChild(characterCode);
+    var characterError = document.createElement('h2');
+    characterError.textContent = 'URIError: URI error';
+    section.appendChild(characterError);
+    console.log('URIError is printing!');
+  },
+  //------------ TypeError ------------------->
+  typeError: function() {
+    var typeErrorTitle
   }
+
 };
 //------------Clear Section----------------->
 function clear(){
   document.getElementById('cheat_sheet').innerHTML = '';
 }
 //-------------Event Listener---------------->
-submit.addEventListener('click',cheatSheet.syntaxError);
+submit.addEventListener('click',cheatSheet.uriError);
