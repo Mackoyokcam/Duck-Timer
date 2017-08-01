@@ -246,7 +246,49 @@ var cheatSheet = {
   },
   //------------ TypeError ------------------->
   typeError: function() {
-    var typeErrorTitle
+    var typeErrorTitle = document.createElement('h1');
+    typeErrorTitle.textContent = 'TypeError';
+    section.appendChild(typeErrorTitle);
+    var typeSub = document.createElement('h2');
+    typeSub.textContent = 'VALUE IS UNEXPECTED DATA TYPE';
+    section.appendChild(typeSub);
+    var typeDescription = document.createElement('p');
+    typeDescription.textContent = 'This is often caused by trying to use an object or method that does not exist.';
+    section.appendChild(typeDescription);
+//--->
+    var incorCase = document.createElement('h2');
+    incorCase.textContent = 'INCORRECT CASE FOR document OBJECT';
+    section.appendChild(incorCase);
+    var incorCaseCode = document.createElement('h3');
+    incorCaseCode.textContent = 'Document.write(\'Oops!\');' + ' \"D\"<-';
+    section.appendChild(incorCaseCode);
+    var incorCaseError = document.createElement('h2');
+    incorCaseError.textContent = 'TypeError: \'undifined\' is fnot a function (evaluating \'Document.write(\'Oops!\')\')';
+    section.appendChild(incorCaseError);
+//--->
+    var incorCaseWrite = document.createElement('h2');
+    incorCaseWrite.textContent = 'INCORRECT CASE FOR write() METHOD';
+    section.appendChild(incorCaseWrite);
+    var incorCaseCodeWrite = document.createElement('h3');
+    incorCaseCodeWrite.textContent = 'document.Write(\'Oops!\');' + ' \"W\"<-';
+    section.appendChild(incorCaseCodeWrite);
+    var incorCaseErrorWrite = document.createElement('h2');
+    incorCaseErrorWrite.textContent = 'TypeError: \'undifined\' is fnot a function (evaluating \'document.Write(\'Oops!\')\')';
+    section.appendChild(incorCaseErrorWrite);
+//--->
+    var method = document.createElement('h2');
+    method.textContent = 'METHOD DOES NOT EXIST';
+    section.appendChild(method);
+    var methodCode1 = document.createElement('h3');
+    methodCode1.textContent = 'var box = {}; ' + ' // Creat empty object';
+    section.appendChild(methodCode1);
+    var methodCode2 = document.createElement('h3');
+    methodCode2.textContent = 'box.getArea ' + ' // Try to access getArea()';
+    section.appendChild(methodCode2);
+    var methodError = document.createElement('h2');
+    methodError.textContent = 'TypeError: \'undefind\' is not a function (evaluating \'box.getArea()\')';
+    section.appendChild(methodError);
+//--->
   }
 
 };
