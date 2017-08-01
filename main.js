@@ -121,7 +121,7 @@ var cheatSheet = {
     h3.textContent = 'var width = 12;';
     section.appendChild(h3);
     var secH3 = document.createElement('h3');
-    h3.textContent = 'var area = width * height;';
+    secH3.textContent = 'var area = width * height;';
     section.appendChild(secH3);
     var h4 = document.createElement('h2');
     h4.textContent = 'RefrenceError: Can\'t find variable: height';
