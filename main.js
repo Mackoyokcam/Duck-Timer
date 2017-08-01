@@ -15,18 +15,18 @@ document.getElementById('duck_message').textContent = 'Hello ' + name + '!';
 
 // Get this info from localStorage in the future
 var messageInterval = 1;
-
+var intervalHolder = messageInterval;
 var theDuck = new Duck(duckMessages);
 
 
 //when user enters info and presses start, goal changes
 
 
-var userGoal = getElementById('userGoalInput').value;
 
 function showGoal() {
+  var userGoal = document.getElementById('userGoalInput').value;
   var divEl = document.getElementById('theGoalOutPut');
-  var pEl = document.createElement('pE');
+  var pEl = document.createElement('p');
   pEl.textContent = userGoal;
   divEl.appendChild(pEl);
 
