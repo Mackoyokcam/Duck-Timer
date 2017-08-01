@@ -38,9 +38,9 @@ function showGoal() {
   var userGoal = document.getElementById('userGoalInput').value;
   var divEl = document.getElementById('theGoalOutPut');
   var pEl = document.createElement('p');
+  pEl.id = 'userGoal';
   pEl.textContent = userGoal;
   divEl.appendChild(pEl);
-
 }
 
 // Duck Constructor
@@ -73,6 +73,24 @@ function handleStop() {
   document.getElementById('start_button').disabled = false;
   document.getElementById('start_button').style.opacity = 1;
   timer = clearInterval(timer);
+  var jqPrompt = {
+    state0: {
+      title: 'Name',
+      html:'<label>Solution: <input type="text" name="solution" value=""></label><br />',
+      buttons: { Solved: 1 },
+      //focus: "input[name='fname']",
+      submit:function(e,v,m,f){
+        console.log(f);
+        e.preventDefault();
+        $.prompt.close();
+
+        // store in array
+        times[document.getElementById('userGoal').textContent] = f.solution;
+        localStorage.times = JSON.stringify(times);
+      }
+    }
+  };
+  $.prompt(jqPrompt);
 }
 
 // Reset timer to 15 minutes, stop the clock
