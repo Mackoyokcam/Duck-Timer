@@ -58,9 +58,9 @@ function Duck(messages) {
   this.displayMessage = function() {
     // Display a message to user
     var rando = randomNumber(0, this.messages.length);
+    console.log('Display Called!');
     while(this.previous === rando) {
       rando = randomNumber(0, this.messages.length);
-      console.log('pew');
     }
     document.getElementById('duck_message').textContent = this.messages[rando];
     this.previous = rando;
@@ -130,8 +130,9 @@ function handleStart() {
       seconds = 5;
       if (messageInterval === 0) {
         // Send message to duck
+        console.log('Before call....');
         theDuck.displayMessage();
-        messageInterval = intervalHolder + 1;
+        messageInterval = intervalHolder;
       }
       messageInterval--;
     }

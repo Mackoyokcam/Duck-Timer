@@ -29,7 +29,7 @@ footer {
 main {
   width: 960px;
   margin: 0px auto;
-  border: 2px solid black;
+  border: 5px solid black;
   padding: 20px;
   background-color:#f1c802;
 }
@@ -54,6 +54,7 @@ section div {
 fieldset {
   background-color: #f4f0bb;
   margin-bottom: 40px;
+  border: 5px solid black;
 }
 
 div button {
@@ -82,8 +83,9 @@ legend {
   font-size: 30px;
   color: green;
   text-align: center;
-  background-color: white;
+  background-color: cornsilk;
   padding: 5px;
+  border: 2px solid black;
 }
 
 #unsolved_field legend {
