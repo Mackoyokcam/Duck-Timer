@@ -41,8 +41,14 @@ function showGoal() {
   var divEl = document.getElementById('theGoalOutPut');
   var pEl = document.createElement('p');
   pEl.id = 'userGoal';
-  pEl.textContent = userGoal;
+  pEl.textContent = name + ', your goal: ' + userGoal ;
   divEl.appendChild(pEl);
+
+
+
+  var elem = document.getElementById('goalForm');
+  elem.parentNode.removeChild(elem);
+
 }
 
 // Duck Constructor

@@ -1,6 +1,6 @@
 
 *{
-   /*border: solid black 2px;*/
+   border: solid black 2px;
   font-family:sans-serif;
 
 }
@@ -117,18 +117,17 @@ font-size: 10pt;
 }
 .duckyright{
   z-index: 0;
-  position: fixed;
-  left: 1004px;
+  position: absolute;
   transform: rotate(324deg);
-  margin-left: 50px;
+  margin-left: 890px;
 }
 
 .duckybottom{
   position: absolute;
   z-index: 10;
-  bottom:90px;
-  height: 25%;
-  width:25%;
+  bottom:35px;
+  height: 20%;
+  width:20%;
   -ms-transform: rotate(30deg);
 -webkit-transform: rotate(30deg);
 transform: rotate(-1deg);
