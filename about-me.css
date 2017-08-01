@@ -5,9 +5,7 @@
 }
 h1{
   font-family:arial;
-  border:none;
-  width:320px;
-  margin:0 auto;
+  text-align: center;
 
 }
 
@@ -16,6 +14,7 @@ header{
   padding-bottom:20px;
   background-color:#f1c802;
   height:40px;
+  margin-bottom: 20px;
 }
 body{
   /*border: solid black 2px;*/
@@ -27,8 +26,9 @@ main{
 
   padding-top: 20px;
   box-shadow: 10px 10px 5px #888888;
+  border-radius: 25px;
   width:960px;
-  height:800px;
+  height:700px;
   margin:0px auto;
   background-color: WHITE;
 }
@@ -58,15 +58,19 @@ li a {
     margin-right:10px;
     font-weight: bold;
     background-color:#f1c802;
+    border-radius: 25px;
+    margin-left: 10px;
 }
 a:hover{
   color:white;
   background-color:#F4F0BB;
+  border-radius: 25px;
 }
 
 a:visited{
   text-decoration: none;
   color:black;
+  border-radius: 25px;
 }
 #main{
 
@@ -78,8 +82,9 @@ a:visited{
 #aboutUs{
   width:400px;
   display: inline-block;
-  padding-right:50px;
-  padding-left: 20px;
+  padding-right:30px;
+  padding-left: 30px;
+  padding-bottom: 20px;
 }
 
 #name{
@@ -87,6 +92,7 @@ a:visited{
   margin:0 auto;
 }
 img{
+  border-radius: 15px;
   float:left;
   padding: 0px 10px 0px 0px;
 }
