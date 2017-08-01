@@ -32,6 +32,7 @@ section div {
   margin: 0px auto;
   padding: 10px;
   margin-bottom: 20px;
+  background-color: #f4f0bb;
 }
 
 #solved {
@@ -56,4 +57,8 @@ div button {
   border-radius: 20px;
   font-weight: bold;
   color: white;
+}
+
+section {
+  background-color: #87c38f;
 }
