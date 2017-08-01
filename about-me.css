@@ -51,7 +51,7 @@ li{
 
 }
 
-li a {
+a {
 
     text-decoration:none;
     padding:10px;
@@ -61,6 +61,8 @@ li a {
     border-radius: 25px;
     margin-left: 10px;
 }
+
+
 a:hover{
   color:white;
   background-color:#F4F0BB;
@@ -91,7 +93,7 @@ a:visited{
   width:430px;
   margin:0 auto;
 }
-img{
+.profPic{
   border-radius: 15px;
   float:left;
   padding: 0px 10px 0px 0px;

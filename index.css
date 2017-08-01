@@ -4,11 +4,15 @@
   font-family:sans-serif;
 
 }
+@font-face {
+    font-family:rubberDucky;
+    src:url('TPF Rubber Ducky.ttf');
+}
 h1{
-  vertical-align: middle;
-  font-family:arial;
-  border:none;
-  width:320px;
+  vertical-align: ;
+  font-family:rubberDucky;
+  /*border:solid black 2px;*/
+  text-align: center;
   margin:20px auto 20px auto;
 
 }
@@ -82,7 +86,29 @@ a:visited{
   margin: 0 auto;
   width:960px;
 }
+.duckyright{
+  z-index: 0;
+  position: fixed;
+  left: 1004px;
+  -ms-transform: rotate(30deg);
+-webkit-transform: rotate(30deg);
+transform: rotate(324deg);
 
+margin-left: 50px;
+}
+
+.duckybottom{
+  position: absolute;
+  z-index: 10;
+  bottom:90px;
+  height: 30%;
+  width:30%;
+  -ms-transform: rotate(30deg);
+-webkit-transform: rotate(30deg);
+transform: rotate(-1deg);
+
+
+}
 #aboutProject{
   font-size: 14pt;
   line-height: 21px;
