@@ -44,7 +44,7 @@ function showGoal() {
 
 
 
-  var elem = document.getElementById("goalForm");
+  var elem = document.getElementById('goalForm');
   elem.parentNode.removeChild(elem);
 
 }
