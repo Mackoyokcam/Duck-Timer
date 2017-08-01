@@ -1,0 +1,59 @@
+*{
+  font-family:sans-serif;
+}
+
+header {
+  padding-top:10px;
+  padding-bottom:20px;
+  background-color:#f1c802;
+  height:40px;
+  margin-bottom: 20px;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  height:70px;
+  background-color:#f1c802;
+  margin-bottom: 0px;
+  margin-top: 20px;
+}
+
+main {
+  width: 960px;
+  margin: 0px auto;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+section div {
+  border: 2px solid black;
+  width: 480px;
+  margin: 0px auto;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+#solved {
+  border: 2px solid green;
+}
+
+#unsolved {
+  border: 2px solid blue;
+}
+
+div button {
+  top: -100px;
+  right: -30px;
+  border: 2px solid red;
+  height: 40px;
+  width: 40px;
+  font-size: 25px;
+  cursor: pointer;
+  background-color: red;
+  float: right;
+  position: relative;
+  border-radius: 20px;
+  font-weight: bold;
+  color: white;
+}

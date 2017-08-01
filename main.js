@@ -1,11 +1,10 @@
 'use strict';
 
-var name;
+var name = 'Johnny';
 if(localStorage.userName) {
   name = JSON.parse(localStorage.userName);
-} else {
-  name = 'Johnny';
 }
+
 var duckMessages = inspMessages; // Located in messages.js
 
 var times = {};
