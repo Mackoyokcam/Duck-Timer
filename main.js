@@ -16,7 +16,7 @@ function notifyMe() {
   else {
     console.log('notified!');
     var notification = new Notification('Ducky Timer App', {
-      icon: 'notification_icon.png',
+      icon: 'imgs/notification_icon.png',
       body: 'Hey, you have ' + minutes + ' minutes remaining!',
     });
 
