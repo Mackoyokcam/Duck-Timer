@@ -241,6 +241,7 @@ z-index: 0;
   font-size: 25px;
 }
 
+
 /*mobile version*/
 /*
 @media screen and (max-width: 480px) {
@@ -248,3 +249,7 @@ z-index: 0;
         background-color: lightgreen;
     }
 }*/
+
+.cheat_menu li {
+  display: inline;
+}
