@@ -15,13 +15,13 @@ function notifyMe() {
     Notification.requestPermission();
   else {
     console.log('notified!');
-    var notification = new Notification('Notification title', {
-      icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
-      body: 'Hey there! You\'ve been notified!',
+    var notification = new Notification('Ducky Timer App', {
+      icon: 'imgs/notification_icon.png',
+      body: 'Hey, you have ' + minutes + ' minutes remaining!',
     });
 
     notification.onclick = function () {
-      window.open('http://stackoverflow.com/a/13328397/1269037');
+      // Do something
     };
   }
 }
