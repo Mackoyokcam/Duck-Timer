@@ -3,6 +3,10 @@
    /*border: solid black 2px;*/
   font-family:sans-serif;
 }
+html{
+  height: 100%;
+}
+
 @font-face {
     font-family:rubberDucky;
     src:url('TPF Rubber Ducky.ttf');
@@ -16,8 +20,8 @@ h1{
   font-size: 20pt;
   font-weight: bold;
   text-align: center;
-
 }
+
 #theGoalOutPut p{
 
 }
@@ -28,11 +32,13 @@ header{
   height:40px;
   margin-bottom: 20px;
   border: solid 2px black;
+  width: 100%;
 }
 body{
   /*border: solid black 2px;*/
   background-color:#F4F0BB;
   margin: 0px auto;
+  height: 100%;
 }
 
 main{
@@ -41,7 +47,7 @@ main{
   box-shadow: 10px 10px 5px #888888;
   border-radius: 25px;
   width:960px;
-  height:700px;
+  height:100%;
   margin:0px auto;
   background-color: WHITE;
 }
@@ -51,7 +57,7 @@ footer{
   height:70px;
   background-color:#f1c802;
   margin-top: 20px;
-  position: relative;
+  position: absolute;
   bottom: 0px;
   width: 100%;
   border: solid 2px black;
@@ -240,7 +246,40 @@ z-index: 0;
   border-radius: 10px;
   font-size: 25px;
 }
-
+.cheat_menu {
+  width:960px;
+  margin: 0 auto;
+}
+.cheat_menu ul{
+  text-align: center;
+}
 .cheat_menu li {
   display: inline;
+}
+#cheat_sheet {
+  width: 960px;
+  margin: 0 auto;
+}
+#cheat_sheet h1{
+  font-size: 35px;
+  color: #226F54;
+  margin-bottom: -10px;
+}
+#errorCode, #errorCode2, #errorCode3, #errorCode4 {
+  font-size: 15px;
+  color:#ff0000;
+  background-color:#ffe2e2;
+  margin-top: -12px;
+  width: 450px;
+}
+#cheat_sheet h3 {
+  font-size: 15px;
+  margin-top: -10px;
+  color:#226F54;
+  width:450px
+}
+#cheat_sheet p {
+  width: 450px;
+  font-size: 15px;
+  margin-top: -12px;
 }

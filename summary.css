@@ -15,7 +15,52 @@ header {
   width: 100%;
   height: 100px;
   background-color:#f1c802;
+  /*margin-bottom: 20px;*/
   border: 2px solid black;
+  margin-bottom: 20px;
+}
+
+ul {
+  font-family:sans-serif;
+margin-top: 2%;
+    text-align:right;
+
+}
+
+li{
+    display:inline;
+
+}
+
+li a {
+
+    text-decoration:none;
+    padding:10px;
+    margin-right:10px;
+    font-weight: bold;
+    background-color:#f1c802;
+    border-radius: 25px;
+
+}
+li a:hover{
+  color:white;
+  background-color:#F4F0BB;
+  border-radius: 25px;
+}
+
+li a:visited{
+  text-decoration: none;
+  color:black;
+  border-radius: 25px;
+}
+
+
+footer {
+  height: 10%;
+  background-color:#f1c802;
+  /*margin-top: 20px;*/
+  border: 2px solid black;
+  margin-top: 20px;
 }
 
 main {
