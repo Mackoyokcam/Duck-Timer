@@ -53,12 +53,10 @@ main{
 }
 
 footer{
-  margin-bottom: 0px;
+  position: absolute;
   height:70px;
   background-color:#f1c802;
   margin-top: 20px;
-  position: absolute;
-  bottom: 0px;
   width: 100%;
   border: solid 2px black;
 }
