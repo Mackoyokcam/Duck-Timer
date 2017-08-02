@@ -246,6 +246,40 @@ z-index: 0;
   border-radius: 10px;
   font-size: 25px;
 }
+.cheat_menu {
+  width:960px;
+  margin: 0 auto;
+}
+.cheat_menu ul{
+  text-align: center;
+}
 .cheat_menu li {
   display: inline;
+}
+#cheat_sheet {
+  width: 960px;
+  margin: 0 auto;
+}
+#cheat_sheet h1{
+  font-size: 35px;
+  color: #226F54;
+  margin-bottom: -10px;
+}
+#errorCode, #errorCode2, #errorCode3, #errorCode4 {
+  font-size: 15px;
+  color:#ff0000;
+  background-color:#ffe2e2;
+  margin-top: -12px;
+  width: 450px;
+}
+#cheat_sheet h3 {
+  font-size: 15px;
+  margin-top: -10px;
+  color:#226F54;
+  width:450px
+}
+#cheat_sheet p {
+  width: 450px;
+  font-size: 15px;
+  margin-top: -12px;
 }
