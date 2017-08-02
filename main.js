@@ -46,11 +46,8 @@ function showGoal() {
   pEl.textContent = userGoal;
   divEl.appendChild(pEl);
 
-
-
   var elem = document.getElementById('goalForm');
   elem.parentNode.removeChild(elem);
-
 }
 
 // Duck Constructor
@@ -85,8 +82,8 @@ function handleStop() {
   timer = clearInterval(timer);
   var jqPrompt = {
     state0: {
-      title: 'Name',
-      html:'<label>Solution: <input type="text" name="solution" value=""></label><br />',
+      title: 'Good Job! Please tell us how you solved the problem.',
+      html:'<label>Solution: <input id="prompt_solution" type="text" name="solution" value=""></label><br />',
       buttons: { Solved: 1 },
       focus: 'input[name="solution"]',
       submit:function(e,v,m,f){
@@ -103,19 +100,6 @@ function handleStop() {
   };
   $.prompt(jqPrompt);
 }
-
-// Reset timer to 15 minutes, stop the clock
-// function handleReset() {
-//   minutes = 15;
-//   seconds = 0;
-//   messageInterval = intervalHolder;
-//   timer = clearInterval(timer);
-//   document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
-//   document.getElementById('done_button').disabled = true;
-//   document.getElementById('done_button').style.opacity = 0.5;
-//   document.getElementById('start_button').disabled = false;
-//   document.getElementById('start_button').style.opacity = 1;
-// }
 
 // Start event handler
 function handleStart() {
@@ -144,7 +128,7 @@ function handleStart() {
       document.getElementById('timer').innerHTML = 'EXPIRED';
       var jqPrompt = {
         state0: {
-          title: 'Name',
+          title: 'Please leave a comment for this goal.',
           html:'<label>Comment: <input type="text" name="comment" value=""></label><br />',
           buttons: { Comment: 1 },
           focus: 'input[name="comment"]',
