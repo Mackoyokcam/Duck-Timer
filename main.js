@@ -14,11 +14,22 @@ function notifyMe() {
   if (Notification.permission !== 'granted')
     Notification.requestPermission();
   else {
-    console.log('notified!');
-    var notification = new Notification('Ducky Timer App', {
-      icon: 'imgs/notification_icon.png',
-      body: 'Hey, you have ' + minutes + ' minutes remaining!',
-    });
+    var audio = new Audio('quack.mp3');
+    var notification;
+    audio.play();
+    if (minutes < 0) {
+      notification = new Notification('Ducky Timer App', {
+        icon: 'imgs/notification_icon.png',
+        body: 'Your 15 minutes have expired. Take a break!',
+      });
+    } else {
+      notification = new Notification('Ducky Timer App', {
+        icon: 'imgs/notification_icon.png',
+        body: 'Hey, you have ' + minutes + ' minutes remaining!',
+      });
+    }
+
+    setTimeout(notification.close.bind(notification), 4000);
 
     notification.onclick = function () {
       // Do something
@@ -139,7 +150,7 @@ function handleStart() {
     // 1 minute has has passed
     if (seconds === -1) {
       minutes--;
-      seconds = 5;
+      seconds = 59;
       if (messageInterval === 0) {
         // Send message to duck
         console.log('Before call....');
@@ -152,11 +163,9 @@ function handleStart() {
     if (minutes === 5 && seconds === 0) {
       notifyMe();
     }
-    if (minutes === 1 && seconds === 0) {
-      notifyMe();
-    }
     // Time expired
     if (minutes < 0) {
+      notifyMe();
       clearInterval(timer);
       document.getElementById('timer').innerHTML = 'EXPIRED';
       var jqPrompt = {
