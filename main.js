@@ -134,7 +134,6 @@ function handleStart() {
   document.getElementById('done_button').disabled = false;
   document.getElementById('done_button').style.opacity = 1;
   showGoal();
-  notifyMe();
   timer = setInterval(function() {
     seconds--;
     // 1 minute has has passed
@@ -148,6 +147,13 @@ function handleStart() {
         messageInterval = intervalHolder;
       }
       messageInterval--;
+    }
+    // Notify 5 minute mark
+    if (minutes === 5 && seconds === 0) {
+      notifyMe();
+    }
+    if (minutes === 1 && seconds === 0) {
+      notifyMe();
     }
     // Time expired
     if (minutes < 0) {
