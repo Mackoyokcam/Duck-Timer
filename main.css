@@ -110,7 +110,7 @@ a:visited{
   padding-bottom: 20px;
 }
 
-#name{
+#name {
   width:430px;
   margin:0 auto;
 }
@@ -194,9 +194,7 @@ font-size: 20pt;
   /*border: 2px solid black;*/
 }
 
-.bubble
-{
-
+.bubble{
 margin-top: -50px;
 margin-left: -180px;
 position: fixed;
@@ -210,12 +208,9 @@ border: #7F7F7F solid 4px;
 -moz-border-radius: 20px;
 border-radius: 20px;
 text-align: left;
-
 }
 
-.bubble:after
-{
-
+.bubble:after{
 content: "";
 position: absolute;
 bottom: -15px;
@@ -228,8 +223,7 @@ width: 0;
 z-index: 1;
 }
 
-.bubble:before
-{
+.bubble:before{
 content: "";
 position: absolute;
 bottom: -19.5px;
