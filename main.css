@@ -261,6 +261,7 @@ z-index: 0;
 }
 #cheat_sheet {
   width: 960px;
+  min-height:200px;
   margin: 0 auto;
 }
 #cheat_sheet h1{
@@ -270,6 +271,7 @@ z-index: 0;
 }
 #errorCode, #errorCode2, #errorCode3, #errorCode4 {
   font-size: 15px;
+  font-family: "Courier New", Courier, monospace;
   color:#ff0000;
   background-color:#ffe2e2;
   margin-top: -12px;
@@ -277,6 +279,7 @@ z-index: 0;
 }
 #cheat_sheet h3 {
   font-size: 15px;
+  font-family: "Courier New", Courier, monospace;
   margin-top: -10px;
   color:#226F54;
   width:450px

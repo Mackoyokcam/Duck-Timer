@@ -1,5 +1,31 @@
 'use strict';
 
+document.addEventListener('DOMContentLoaded', function () {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.');
+    return;
+  }
+
+  if (Notification.permission !== 'granted')
+    Notification.requestPermission();
+});
+
+function notifyMe() {
+  if (Notification.permission !== 'granted')
+    Notification.requestPermission();
+  else {
+    console.log('notified!');
+    var notification = new Notification('Ducky Timer App', {
+      icon: 'imgs/notification_icon.png',
+      body: 'Hey, you have ' + minutes + ' minutes remaining!',
+    });
+
+    notification.onclick = function () {
+      // Do something
+    };
+  }
+}
+
 var name = 'Johnny';
 if(localStorage.userName) {
   name = JSON.parse(localStorage.userName);
@@ -108,6 +134,7 @@ function handleStart() {
   document.getElementById('done_button').disabled = false;
   document.getElementById('done_button').style.opacity = 1;
   showGoal();
+  notifyMe();
   timer = setInterval(function() {
     seconds--;
     // 1 minute has has passed
