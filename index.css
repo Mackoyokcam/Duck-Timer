@@ -23,6 +23,7 @@ header{
   background-color:#f1c802;
   height:40px;
   margin-bottom: 20px;
+  border: solid 2px black;
 }
 body{
   /*border: solid black 2px;*/
@@ -50,6 +51,7 @@ footer{
   position: relative;
   bottom: 0px;
   width: 100%;
+  border: solid 2px black;
 }
 
 ul {
@@ -129,14 +131,14 @@ color: white ;
 
 .duckybottom{
   position: relative;
-margin-top: -30px;
+margin-top: -40px;
 
 transform: rotate(-1deg);
 }
 
 #aboutProject{
   font-size: 14pt;
-  line-height: 21px;
+  line-height: 23px;
   width:430px;
   margin:0 auto;
 }
