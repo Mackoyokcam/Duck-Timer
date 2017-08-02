@@ -46,11 +46,8 @@ function showGoal() {
   pEl.textContent = userGoal;
   divEl.appendChild(pEl);
 
-
-
   var elem = document.getElementById('goalForm');
   elem.parentNode.removeChild(elem);
-
 }
 
 // Duck Constructor
@@ -85,8 +82,8 @@ function handleStop() {
   timer = clearInterval(timer);
   var jqPrompt = {
     state0: {
-      title: 'Name',
-      html:'<label>Solution: <input type="text" name="solution" value=""></label><br />',
+      title: 'Good Job! Please tell us how you solved the problem.',
+      html:'<label>Solution: <input id="prompt_solution" type="text" name="solution" value=""></label><br />',
       buttons: { Solved: 1 },
       focus: 'input[name="solution"]',
       submit:function(e,v,m,f){
@@ -103,19 +100,6 @@ function handleStop() {
   };
   $.prompt(jqPrompt);
 }
-
-// Reset timer to 15 minutes, stop the clock
-// function handleReset() {
-//   minutes = 15;
-//   seconds = 0;
-//   messageInterval = intervalHolder;
-//   timer = clearInterval(timer);
-//   document.getElementById('timer').textContent = minutes + ':' + ('0' + seconds).slice(-2);
-//   document.getElementById('done_button').disabled = true;
-//   document.getElementById('done_button').style.opacity = 0.5;
-//   document.getElementById('start_button').disabled = false;
-//   document.getElementById('start_button').style.opacity = 1;
-// }
 
 // Start event handler
 function handleStart() {
@@ -144,7 +128,7 @@ function handleStart() {
       document.getElementById('timer').innerHTML = 'EXPIRED';
       var jqPrompt = {
         state0: {
-          title: 'Name',
+          title: 'Please leave a comment for this goal.',
           html:'<label>Comment: <input type="text" name="comment" value=""></label><br />',
           buttons: { Comment: 1 },
           focus: 'input[name="comment"]',
@@ -414,6 +398,39 @@ var cheatSheet = {
     var numberOfError = document.createElement('h2');
     numberOfError.textContent = 'RangeError: toPrecision() argument must be between 0 and 21';
     section.appendChild(numberOfError);
+  },
+  //----------Error ------------------------>
+  error: function(){
+    clear();
+    var errorTitle = document.createElement('h1');
+    errorTitle.textContent = 'Error';
+    section.appendChild(errorTitle);
+    var errorSub = document.createElement('h2');
+    errorSub.textContent = 'GENERIC ERROR OBJECT';
+    section.appendChild(errorSub);
+    var errorDescription = document.createElement('p');
+    errorDescription.textContent = 'The generisc Error object is the template (or prototype) from which all other error objects are created.';
+    section.appendChild(errorDescription);
+  },
+  //------------ NaN ------------------------>
+  nan: function() {
+    clear();
+    var nanTitle = document.createElement('h1');
+    nanTitle.textContent = 'NaN';
+    section.appendChild(nanTitle);
+    var nanSub = document.createElement('h2');
+    nanSub.textContent = 'NOT AN ERROR';
+    section.appendChild(nanSub);
+    var nanDescription = document.createElement('p');
+    nanDescription.textContent = 'Note: If you perform a mathematical operation using a value that is not a number, you end up with the value of NaN, not a type error.';
+    section.appendChild(nanDescription);
+//--->
+    var notNumber = document.createElement('h2');
+    notNumber.textContent = 'NOT A NUMBER';
+    section.appendChild(notNumber);
+    var notNumberCode = document.createElement('h3');
+    notNumberCode.textContent = 'var total = 3 * \'Ivy\'; ' + ' \"Ivy\"<-';
+    section.appendChild(notNumberCode);
   }
 
 };
@@ -422,4 +439,10 @@ function clear(){
   document.getElementById('cheat_sheet').innerHTML = '';
 }
 //-------------Event Listener---------------->
-submit.addEventListener('click',cheatSheet.uriError);
+document.getElementById('syntax').addEventListener('click',cheatSheet.syntaxError);
+document.getElementById('typeE').addEventListener('click',cheatSheet.typeError);
+document.getElementById('range').addEventListener('click',cheatSheet.rangeError);
+document.getElementById('uri').addEventListener('click',cheatSheet.uriError);
+document.getElementById('nan').addEventListener('click',cheatSheet.nan);
+document.getElementById('error').addEventListener('click',cheatSheet.error);
+document.getElementById('reference').addEventListener('click',cheatSheet.referenceError);

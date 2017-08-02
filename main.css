@@ -240,3 +240,12 @@ display: block;
 width: 0;
 z-index: 0;
 }
+
+#prompt_solution {
+  height: 30px;
+  border-radius: 10px;
+  font-size: 25px;
+}
+.cheat_menu li {
+  display: inline;
+}
