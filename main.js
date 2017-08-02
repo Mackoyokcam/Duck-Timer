@@ -15,14 +15,13 @@ function notifyMe() {
     Notification.requestPermission();
   else {
     console.log('notified!');
-    var notification = new Notification('Notification title', {
-      icon: 'chromeExt/imgs/notifcation_icon.png',
-      body: 'Hey, you have ' + minutes + ' minutes remaining! Click me to add 5 minutes.',
+    var notification = new Notification('Ducky Timer App', {
+      icon: 'chromeExt/imgs/notification_icon.png',
+      body: 'Hey, you have ' + minutes + ' minutes remaining!',
     });
 
     notification.onclick = function () {
-      minutes += 5;
-      window.open('main.html');
+      // Do something
     };
   }
 }
