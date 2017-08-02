@@ -1,5 +1,31 @@
 'use strict';
 
+document.addEventListener('DOMContentLoaded', function () {
+  if (!Notification) {
+    alert('Desktop notifications not available in your browser. Try Chromium.');
+    return;
+  }
+
+  if (Notification.permission !== 'granted')
+    Notification.requestPermission();
+});
+
+function notifyMe() {
+  if (Notification.permission !== 'granted')
+    Notification.requestPermission();
+  else {
+    console.log('notified!');
+    var notification = new Notification('Notification title', {
+      icon: 'http://cdn.sstatic.net/stackexchange/img/logos/so/so-icon.png',
+      body: 'Hey there! You\'ve been notified!',
+    });
+
+    notification.onclick = function () {
+      window.open('http://stackoverflow.com/a/13328397/1269037');
+    };
+  }
+}
+
 var name = 'Johnny';
 if(localStorage.userName) {
   name = JSON.parse(localStorage.userName);
@@ -108,6 +134,7 @@ function handleStart() {
   document.getElementById('done_button').disabled = false;
   document.getElementById('done_button').style.opacity = 1;
   showGoal();
+  notifyMe();
   timer = setInterval(function() {
     seconds--;
     // 1 minute has has passed

@@ -81,5 +81,3 @@ function removeItemUnsolved (event) {
   }
   button.parentNode.parentNode.removeChild(button.parentNode);
 }
-
-document.getElementById('back_button').addEventListener('click', handleBack);

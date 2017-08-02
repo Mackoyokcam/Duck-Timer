@@ -1,0 +1,16 @@
+{
+  "manifest_version": 2,
+
+  "name": "Ducky Timer App",
+  "description": "This extension is a test for the ducky timer chrome extension",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "imgs/icon.png",
+    "default_popup": "main.html",
+    "default_title": "Click here!"
+  },
+  "permissions": [
+    "activeTab"
+  ]
+}
