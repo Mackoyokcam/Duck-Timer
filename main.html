@@ -1,59 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="impromptu.css" />
-    <link rel="stylesheet" type="text/css" href="main.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="impromptu.js"></script>
-    <title>Timer</title>
-  </head>
-  <body>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="impromptu.css" />
+  <link rel="stylesheet" type="text/css" href="main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="impromptu.js"></script>
+  <title>Timer</title>
+</head>
+<body>
 
-    <header>
-      <div id="header">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          |
-          <li><a href="summary.html">Summary</a></li>
-          |
-          <li><a href="about-me.html">About Us</a></li>
+  <header>
+    <div>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        |
+        <li><a href="summary.html">Summary</a></li>
+        |
+        <li><a href="about-me.html">About Us</a></li>
 
-        </ul>
-      </div>
-    </header>
+      </ul>
+    </div>
+  </header>
 
-<div id="main">
+  <div id="main">
 
-  <form id = "goalForm">
-    Enter your psuedo-code written goal then start timer:<br>
-    <!-- <input id="userGoalInput" type="text" name="firstname" placeholder="Ex: add function that creates list..."> </input> -->
-    <input id="userGoalInput" type="text" name="firstname" placeholder="Your psuedo-code written goal:"> </input>
-  </form>
-  <div id="theGoalOutPut"></div>            <!-- user goal that will pop up when button is clicked-->
-
+    <form id = "goalForm">
+      Enter your psuedo-code written goal then start timer:<br>
+      <input id="userGoalInput" type="text" name="firstname" placeholder="Your psuedo-code written goal:"> </input>
+    </form>
+    <div id="theGoalOutPut"></div>
 
     <div id="timer_container">
-<div>
+      <div>
 
 
-<ul>
-  <li>
-    <div class="bubble">
+        <ul>
+          <li>
+            <div class="bubble">
 
-  <p id="duck_message"></p> </li>
-  <li><img id="rubber_duck" src="imgs/Rubber-duck.png"></img></li>
-</div>
-    </ul>
-    </div>
-      <section id="timer"></section>
-    </div>
+              <p id="duck_message"></p> </li>
+              <li><img id="rubber_duck" src="imgs/Rubber-duck.png"></img></li>
+            </div>
+          </ul>
+        </div>
+        <section id="timer"></section>
+      </div>
 
-    <div id="buttons">
-      <button id="start_button">Start</button>
-      <button id="done_button">Done</button>
-      <button id="test">Test</button>
-    </div>
+      <div id="buttons">
+        <button id="start_button">Start</button>
+        <button id="done_button">Done</button>
+        <button id="test">Test</button>
+      </div>
 
 
 
@@ -78,4 +76,4 @@
   </body>
   <footer>
   </footer>
-</html>
+  </html>
