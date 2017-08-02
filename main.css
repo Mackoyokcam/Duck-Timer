@@ -231,3 +231,6 @@ font-size: 20pt;
   -webkit-margin-before: 0em;
   -webkit-margin-after: 0em;
 }
+.cheat_menu li {
+  display: inline;
+}
