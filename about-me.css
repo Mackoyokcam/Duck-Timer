@@ -11,7 +11,7 @@ h1{
 
 img {
   height: 100px;
-  width: 100px; 
+  width: 100px;
 }
 
 header{
@@ -20,6 +20,7 @@ header{
   background-color:#f1c802;
   height:40px;
   margin-bottom: 20px;
+  border: solid 2px black;
 }
 body{
   /*border: solid black 2px;*/
@@ -43,6 +44,7 @@ footer{
   height:70px;
   background-color:#f1c802;
   margin-top: 20px;
+  border: solid 2px black;
 }
 ul {
 

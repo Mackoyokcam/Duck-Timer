@@ -200,6 +200,7 @@ var cheatSheet = {
     secH3.textContent = 'var area = width * height;';
     section.appendChild(secH3);
     var h4 = document.createElement('h2');
+    h4.id = 'errorCode';
     h4.textContent = 'RefrenceError: Can\'t find variable: height';
     section.appendChild(h4);
     var namedTitle = document.createElement('h2');
@@ -209,6 +210,7 @@ var cheatSheet = {
     namedCode.textContent = 'document.write(randomFunction());';
     section.appendChild(namedCode);
     var namedError = document.createElement('h2');
+    namedError.id = 'errorCode2';
     namedError.textContent = 'RefrenceError: Can\'t find varfiable: randomFunction';
     section.appendChild(namedError);
     console.log('RefrenceError cheat printed...');
@@ -232,6 +234,7 @@ var cheatSheet = {
     mismatchExp.textContent = 'document.write(\"Howdy\')';
     section.appendChild(mismatchExp);
     var mismatchError = document.createElement('h2');
+    mismatchError.id = 'errorCode';
     mismatchError.textContent = 'SyntaxErro: Unexpected EOF';
     section.appendChild(mismatchError);
 //--->
@@ -242,6 +245,7 @@ var cheatSheet = {
     missBrackCode.textContent = 'documnet.getElementById(\'page\'';
     section.appendChild(missBrackCode);
     var missError = document.createElement('h2');
+    missError.id = 'errorCode2';
     missError.textContent = 'SyntaxError: Expected token \')\'';
     section.appendChild(missError);
 //--->
@@ -255,6 +259,7 @@ var cheatSheet = {
     missinCommaCode.textContent = 'var list = [\'Item 1\', \'Itme 2\' \'Item 3\'];';
     section.appendChild(missinCommaCode);
     var missinCommaError = document.createElement('h2');
+    missinCommaError.id = 'errorCode3';
     missinCommaError.textContent = 'SyntaxError: Expected token \']\'';
     section.appendChild(missinCommaError);
 //--->
@@ -268,6 +273,7 @@ var cheatSheet = {
     malfCode.textContent = 'user = {first name: \"Ben\", lastName: \"Lee\"};';
     section.appendChild(malfCode);
     var malfError = document.createElement('h2');
+    malfError.id = 'errorCode4';
     malfError.textContent = 'SyntaxError: Expected an identifier but found \'name\' instead';
     section.appendChild(malfError); console.log('SyntaxError is printing!');
   },
@@ -277,6 +283,9 @@ var cheatSheet = {
     var uriErrorTitle = document.createElement('h1');
     uriErrorTitle.textContent = 'URIError';
     section.appendChild(uriErrorTitle);
+    var uriSub = document.createElement('h2');
+    uriSub.textContent = 'INCORECT USE OF URI FUNCTIONS';
+    section.appendChild(uriSub);
     var uriDescription = document.createElement('p');
     uriDescription.textContent = 'If these characters are not escaped in URIs, they will cause an error: / ? & # : ;';
     section.appendChild(uriDescription);
@@ -288,6 +297,7 @@ var cheatSheet = {
     characterCode.textContent = 'decodeURI(\'http://bbc.com/news.php?a=1\')  \"?\"';
     section.appendChild(characterCode);
     var characterError = document.createElement('h2');
+    characterError.id = 'errorCode';
     characterError.textContent = 'URIError: URI error';
     section.appendChild(characterError);
     console.log('URIError is printing!');
@@ -312,6 +322,7 @@ var cheatSheet = {
     incorCaseCode.textContent = 'Document.write(\'Oops!\');' + ' \"D\"<-';
     section.appendChild(incorCaseCode);
     var incorCaseError = document.createElement('h2');
+    incorCaseError.id = 'errorCode';
     incorCaseError.textContent = 'TypeError: \'undifined\' is fnot a function (evaluating \'Document.write(\'Oops!\')\')';
     section.appendChild(incorCaseError);
 //--->
@@ -321,6 +332,7 @@ var cheatSheet = {
     incorCaseCodeWrite.textContent = 'document.Write(\'Oops!\');' + ' \"W\"<-';
     section.appendChild(incorCaseCodeWrite);
     var incorCaseErrorWrite = document.createElement('h2');
+    incorCaseErrorWrite.id = 'errorCode2';
     incorCaseErrorWrite.textContent = 'TypeError: \'undifined\' is fnot a function (evaluating \'document.Write(\'Oops!\')\')';
     section.appendChild(incorCaseErrorWrite);
 //--->
@@ -334,6 +346,7 @@ var cheatSheet = {
     methodCode2.textContent = 'box.getArea ' + ' // Try to access getArea()';
     section.appendChild(methodCode2);
     var methodError = document.createElement('h2');
+    methodError.id = 'errorCode3';
     methodError.textContent = 'TypeError: \'undefind\' is not a function (evaluating \'box.getArea()\')';
     section.appendChild(methodError);
 //--->
@@ -347,6 +360,7 @@ var cheatSheet = {
     domCode2.textContent = 'el.innerHTML = \'Mango\'';
     section.appendChild(domCode2);
     var domError = document.createElement('h2');
+    domError.id = 'errorCode4';
     domError.textContent = 'TypeError: \'null\' is not an object (evaluating \'el.innerHTML = \'Mango\')';
     section.appendChild(domError);
   },
@@ -370,6 +384,7 @@ var cheatSheet = {
     cannotCode.textContent = 'var anArray = new Array(-1);';
     section.appendChild(cannotCode);
     var cannotError = document.createElement('h2');
+    cannotError.id = 'errorCode';
     cannotError.textContent = 'RangeError: Array size is not a small enough positive integer';
     section.appendChild(cannotError);
 //--->
@@ -383,6 +398,7 @@ var cheatSheet = {
     numberCode2.textContent = 'price.toFixed(21); ' + ' \"21\"<-';
     section.appendChild(numberCode2);
     var numberError = document.createElement('h2');
+    numberError.id = 'errorCode2';
     numberError.textContent = 'RangeError: toFixed() argument must be between 0 and 20';
     section.appendChild(numberError);
 //--->
@@ -396,6 +412,7 @@ var cheatSheet = {
     numberOfCode2.textContent = 'num.toPrecision(22); ' + ' \"22\"<-';
     section.appendChild(numberOfCode2);
     var numberOfError = document.createElement('h2');
+    numberOfError.id = 'errorCode3';
     numberOfError.textContent = 'RangeError: toPrecision() argument must be between 0 and 21';
     section.appendChild(numberOfError);
   },
