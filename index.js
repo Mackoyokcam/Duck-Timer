@@ -12,10 +12,4 @@ function storeOnClick () {
 
 }
 
-
-
-
-
-
-
 document.getElementById('userNameSubmitButton').addEventListener('click', storeOnClick);
