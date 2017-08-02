@@ -1,5 +1,9 @@
 'use strict';
 
+Notification.requestPermission();
+
+var notification = new Notification('Hello there!');
+
 var name = 'Johnny';
 if(localStorage.userName) {
   name = JSON.parse(localStorage.userName);
