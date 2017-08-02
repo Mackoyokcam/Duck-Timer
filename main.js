@@ -203,7 +203,7 @@ function isEmpty(str) {
 document.getElementById('start_button').addEventListener('click', handleStart);
 document.getElementById('done_button').addEventListener('click', handleStop);
 // document.getElementById('reset_button').addEventListener('click', handleReset);
-document.getElementById('test').addEventListener('click', function() {minutes = -1;});
+// document.getElementById('test').addEventListener('click', function() {minutes = -1;});
 document.getElementById('userGoalInput').addEventListener('input', handleInput);
 
 //----------->
