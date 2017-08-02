@@ -29,7 +29,7 @@ function notifyMe() {
       });
     }
 
-    setTimeout(notification.close.bind(notification), 4000);
+    setTimeout(notification.close.bind(notification), 10000);
 
     notification.onclick = function () {
       // Do something
