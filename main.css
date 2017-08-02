@@ -57,7 +57,7 @@ footer{
   height:70px;
   background-color:#f1c802;
   margin-top: 20px;
-  position: absolute;
+  /*position: absolute;*/
   bottom: 0px;
   width: 100%;
   border: solid 2px black;
@@ -138,6 +138,11 @@ button {
   border-radius: 4px;
   box-sizing: border-box;
   background-color: #f1c802;
+  transition: all 0.3s ease 0s;
+}
+button:hover{
+  background: #B94618;
+  color: white;
 }
 
 #buttons{
@@ -265,10 +270,11 @@ z-index: 0;
   font-size: 35px;
   color: #226F54;
   margin-bottom: -10px;
+  font-family: 'Raleway', sans-serif;
 }
 #errorCode, #errorCode2, #errorCode3, #errorCode4 {
   font-size: 15px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Source Code Pro', monospace;
   color:#ff0000;
   background-color:#ffe2e2;
   margin-top: -12px;
@@ -276,7 +282,8 @@ z-index: 0;
 }
 #cheat_sheet h3 {
   font-size: 15px;
-  font-family: "Courier New", Courier, monospace;
+  /*font-family: "Courier New", Courier, monospace;*/
+  font-family: 'Source Code Pro', monospace;
   margin-top: -10px;
   color:#226F54;
   width:450px
