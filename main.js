@@ -277,7 +277,7 @@ var cheatSheet = {
     section.appendChild(mismatchExp);
     var mismatchError = document.createElement('h2');
     mismatchError.id = 'errorCode';
-    mismatchError.textContent = 'SyntaxErro: Unexpected EOF';
+    mismatchError.textContent = 'SyntaxError: Unexpected EOF';
     section.appendChild(mismatchError);
 //--->
     var missBracket = document.createElement('h2');
@@ -504,4 +504,5 @@ document.getElementById('range').addEventListener('click',cheatSheet.rangeError)
 document.getElementById('uri').addEventListener('click',cheatSheet.uriError);
 document.getElementById('nan').addEventListener('click',cheatSheet.nan);
 document.getElementById('error').addEventListener('click',cheatSheet.error);
-document.getElementById('reference').addEventListener('click',cheatSheet.referenceError);
+document.getElementById('reference').addEventListener('click', cheatSheet.referenceError);
+document.getElementById('clear').addEventListener('click', clear);
