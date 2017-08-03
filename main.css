@@ -142,6 +142,17 @@ button {
   background-color: #f1c802;
   transition: all 0.3s ease 0s;
 }
+#start_button{
+
+  background-color: green;
+}
+#done_button{
+    background-color: red; 
+}
+
+
+
+
 button:hover{
   background: #B94618;
   color: white;
