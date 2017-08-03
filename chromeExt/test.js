@@ -54,7 +54,7 @@ chrome.browserAction.onClicked.addListener(function () { //Fired when User Click
       // 1 minute has has passed
       if (seconds === -1) {
         minutes--;
-        seconds = 5;
+        seconds = 59;
         if (messageInterval === 0) {
           // Send message to duck
           // theDuck.displayMessage();
