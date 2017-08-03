@@ -5,12 +5,14 @@
   "description": "This extension is a test for the ducky timer chrome extension",
   "version": "1.0",
 
+  "background": {
+    "scripts": ["test.js"]
+  },
+
   "browser_action": {
     "default_icon": "imgs/icon.png",
-    "default_popup": "main.html",
-    "default_title": "Click here!"
+    "default_title": "Ducky Timer"
   },
-  "permissions": [
-    "activeTab"
-  ]
+  "permissions":
+    ["notifications"]
 }
