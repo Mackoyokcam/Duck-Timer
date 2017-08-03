@@ -65,7 +65,7 @@ document.getElementById('start_button').disabled = true;
 document.getElementById('start_button').style.opacity = 0.5;
 document.getElementById('done_button').disabled = true;
 document.getElementById('done_button').style.opacity = 0.5;
-document.getElementById('duck_message').textContent = 'Hello ' + name + '!';
+document.getElementById('duck_message').textContent = 'Hello ' + name + '! ' + ' click me for a new duck';
 
 // Get this info from localStorage in the future
 var messageInterval = 1;
@@ -506,3 +506,20 @@ document.getElementById('nan').addEventListener('click',cheatSheet.nan);
 document.getElementById('error').addEventListener('click',cheatSheet.error);
 document.getElementById('reference').addEventListener('click', cheatSheet.referenceError);
 document.getElementById('clear').addEventListener('click', clear);
+
+//------ duck click throught-------->
+var mainDuck = document.getElementById('rubber_duck');
+var index = 0;
+
+var ducks = ['imgs/Rubber-duck.png', 'imgs/heisenduck.png','imgs/duck2.png','imgs/duck3.png'];
+
+function duckSelector(){
+  index++;
+  if(index === ducks.length){
+    index = 0;
+  }
+  mainDuck.src = ducks[index];
+}
+
+
+mainDuck.addEventListener('click', duckSelector);
