@@ -3,6 +3,7 @@
    /*border: solid black 2px;*/
   font-family:sans-serif;
 }
+
 html{
   height: 100%;
 }
@@ -11,6 +12,7 @@ html{
     font-family:rubberDucky;
     src:url('TPF Rubber Ducky.ttf');
 }
+
 h1{
   font-family:arial;
   text-align: center;
@@ -25,6 +27,7 @@ h1{
 #theGoalOutPut p{
 
 }
+
 header{
   padding-top:10px;
   padding-bottom:20px;
@@ -34,6 +37,7 @@ header{
   border: solid 2px black;
   width: 100%;
 }
+
 body{
   /*border: solid black 2px;*/
   background-color:#F4F0BB;
@@ -42,7 +46,6 @@ body{
 }
 
 main{
-
   padding-top: 20px;
   box-shadow: 10px 10px 5px #888888;
   border-radius: 25px;
@@ -53,7 +56,7 @@ main{
 }
 
 footer{
-  margin-bottom: 0px;
+  /*position: absolute;*/
   height:70px;
   background-color:#f1c802;
   margin-top: 20px;
@@ -74,7 +77,6 @@ li{
 }
 
 a {
-
     text-decoration:none;
     padding:10px;
     margin-right:10px;
@@ -110,7 +112,7 @@ a:visited{
   padding-bottom: 20px;
 }
 
-#name{
+#name {
   width:430px;
   margin:0 auto;
 }
@@ -199,9 +201,7 @@ font-size: 20pt;
   /*border: 2px solid black;*/
 }
 
-.bubble
-{
-
+.bubble{
 margin-top: -50px;
 margin-left: -180px;
 position: fixed;
@@ -214,12 +214,10 @@ border: #7F7F7F solid 4px;
 -webkit-border-radius: 20px;
 -moz-border-radius: 20px;
 border-radius: 20px;
-
+text-align: left;
 }
 
-.bubble:after
-{
-
+.bubble:after{
 content: "";
 position: absolute;
 bottom: -15px;
@@ -232,8 +230,7 @@ width: 0;
 z-index: 1;
 }
 
-.bubble:before
-{
+.bubble:before{
 content: "";
 position: absolute;
 bottom: -19.5px;
@@ -255,9 +252,11 @@ z-index: 0;
   width:960px;
   margin: 0 auto;
 }
+
 .cheat_menu ul{
   text-align: center;
 }
+
 .cheat_menu li {
   display: inline;
 }
