@@ -127,16 +127,19 @@ color: white ;
   height:100%;
 }
 .duckyright{
-  z-index: 0;
+
   position: absolute;
-  transform: rotate(324deg);
-  margin-left: 894px;
+  transform: rotate(323deg);
+  margin-left: 883px;
+  width: 118px;
+  height:142px;
 }
 
 .duckybottom{
   position: relative;
 margin-top: -40px;
-
+  width: 200px;
+  height: 159px;
 transform: rotate(-1deg);
 }
 
