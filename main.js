@@ -14,11 +14,22 @@ function notifyMe() {
   if (Notification.permission !== 'granted')
     Notification.requestPermission();
   else {
-    console.log('notified!');
-    var notification = new Notification('Ducky Timer App', {
-      icon: 'imgs/notification_icon.png',
-      body: 'Hey, you have ' + minutes + ' minutes remaining!',
-    });
+    var audio = new Audio('quack.mp3');
+    var notification;
+    audio.play();
+    if (minutes < 0) {
+      notification = new Notification('Ducky Timer App', {
+        icon: 'imgs/notification_icon.png',
+        body: 'Your 15 minutes have expired. Take a break!',
+      });
+    } else {
+      notification = new Notification('Ducky Timer App', {
+        icon: 'imgs/notification_icon.png',
+        body: 'Hey, you have ' + minutes + ' minutes remaining!',
+      });
+    }
+
+    setTimeout(notification.close.bind(notification), 10000);
 
     notification.onclick = function () {
       // Do something
@@ -134,13 +145,12 @@ function handleStart() {
   document.getElementById('done_button').disabled = false;
   document.getElementById('done_button').style.opacity = 1;
   showGoal();
-  notifyMe();
   timer = setInterval(function() {
     seconds--;
     // 1 minute has has passed
     if (seconds === -1) {
       minutes--;
-      seconds = 5;
+      seconds = 59;
       if (messageInterval === 0) {
         // Send message to duck
         console.log('Before call....');
@@ -149,8 +159,13 @@ function handleStart() {
       }
       messageInterval--;
     }
+    // Notify 5 minute mark
+    if (minutes === 5 && seconds === 0) {
+      notifyMe();
+    }
     // Time expired
     if (minutes < 0) {
+      notifyMe();
       clearInterval(timer);
       document.getElementById('timer').innerHTML = 'EXPIRED';
       var jqPrompt = {
@@ -262,7 +277,7 @@ var cheatSheet = {
     section.appendChild(mismatchExp);
     var mismatchError = document.createElement('h2');
     mismatchError.id = 'errorCode';
-    mismatchError.textContent = 'SyntaxErro: Unexpected EOF';
+    mismatchError.textContent = 'SyntaxError: Unexpected EOF';
     section.appendChild(mismatchError);
 //--->
     var missBracket = document.createElement('h2');
@@ -489,4 +504,5 @@ document.getElementById('range').addEventListener('click',cheatSheet.rangeError)
 document.getElementById('uri').addEventListener('click',cheatSheet.uriError);
 document.getElementById('nan').addEventListener('click',cheatSheet.nan);
 document.getElementById('error').addEventListener('click',cheatSheet.error);
-document.getElementById('reference').addEventListener('click',cheatSheet.referenceError);
+document.getElementById('reference').addEventListener('click', cheatSheet.referenceError);
+document.getElementById('clear').addEventListener('click', clear);
