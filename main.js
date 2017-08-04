@@ -511,7 +511,7 @@ document.getElementById('clear').addEventListener('click', clear);
 var mainDuck = document.getElementById('rubber_duck');
 var index = 0;
 
-var ducks = ['imgs/Rubber-duck.png', 'imgs/heisenduck.png','imgs/duck2.png','imgs/duck3.png'];
+var ducks = ['imgs/Rubber-duck.png', 'imgs/heisenduck.png','imgs/duck2.png','imgs/duck3.png','imgs/samduck.png','imgs/brookduck.png', 'imgs/duck4.png', 'imgs/duck5.png', 'imgs/duck6.png'];
 
 function duckSelector(){
   index++;
